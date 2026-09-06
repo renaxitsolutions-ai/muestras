@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Fábrica de Webs</title>
+<style>
+  :root{ --bg:#0C1110; --t:#E8EFEC; --t2:#9CADA7; --t3:#6B7D78; --am:#E0A84B; --l:#26332F; }
+  *,*::before,*::after{ box-sizing:border-box }
+  body{ margin:0; min-height:100vh; display:grid; place-items:center; padding:32px;
+        background:var(--bg); color:var(--t); line-height:1.6;
+        font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+        background-image:radial-gradient(80% 120% at 50% 0%,rgba(224,168,75,.13),transparent 62%) }
+  .c{ width:min(520px,100%); text-align:center }
+  .k{ font:600 .72rem/1 ui-monospace,monospace; letter-spacing:.22em;
+      text-transform:uppercase; color:var(--am) }
+  h1{ margin:16px 0 0; font-size:clamp(2rem,7vw,2.9rem); font-weight:800; letter-spacing:-.02em;
+      line-height:1.05 }
+  p{ margin:16px 0 0; color:var(--t2) }
+  .r{ margin-top:26px; padding-top:22px; border-top:1px solid var(--l);
+      font-size:.86rem; color:var(--t3) }
+  a{ color:var(--am); text-decoration:none; border-bottom:1px solid rgba(224,168,75,.35) }
+  a:hover{ border-bottom-color:var(--am) }
+</style>
+</head>
+<body>
+  <main class="c">
+    <span class="k">Jeremy Rojas</span>
+    <h1>Fábrica&nbsp;de&nbsp;Webs</h1>
+    <p>Páginas para negocios de comida. Su nombre, su menú y los pedidos
+       llegando directo a su WhatsApp.</p>
+    <p class="r">Si llegó aquí desde un enlace que le pasé, vuelva atrás:
+       esa era su muestra.</p>
+  </main>
+</body>
+</html>
