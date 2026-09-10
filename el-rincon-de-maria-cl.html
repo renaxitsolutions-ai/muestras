@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- Muestra sin vender: que no salga en Google, para no confundir las
+     busquedas del negocio real. Quitalo el dia que el cliente pague. -->
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#17362C">
 <title>El Rincón de María | Santiago</title>
@@ -19,7 +21,7 @@
  --bg:#F1F9F6; --panel:#FCFDFD; --tinta:#0E1613; --tinta2:#475C55; --suave:#699184;
  --dark:#17362C; --a:#18956E; --c:#C72347; --wa:#25D366;
  --linea:rgba(0,0,0,.11); --sobreA:#FFFFFF;
- --disp:"DM Serif Display",Georgia,serif; --sans:"Manrope",system-ui,sans-serif; --pesoD:400; --r:4px; --esc:1.05;
+ --disp:"DM Serif Display",Georgia,serif; --sans:"Manrope",system-ui,sans-serif; --pesoD:400; --r:4px; --esc:0.99;
 }
 *,*::before,*::after{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -61,7 +63,7 @@ p{margin:0}
  display:grid;place-items:center;font-size:1.45rem;font-style:normal}
 .marca b{display:block;font-family:var(--disp);font-size:1.2rem;line-height:1.12;font-weight:var(--pesoD)}
 .marca span{display:block;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);margin-top:4px}
-.sec{padding:112px 0}
+.sec{padding:106px 0}
 .rot{display:inline-flex;align-items:center;gap:12px;font-size:.71rem;font-weight:700;
  letter-spacing:0.19em;text-transform:uppercase;color:var(--a)}
 .rot::before{content:"";width:26px;height:1.5px;background:var(--a)}
@@ -121,7 +123,7 @@ p{margin:0}
 .dato b{display:block;font-size:.67rem;letter-spacing:.15em;text-transform:uppercase;color:var(--suave)}
 .dato span{display:block;font-weight:500;margin-top:3px}
 .dato a{color:var(--a);font-weight:700}
-.cierre{background:var(--dark);color:#fff;text-align:center;padding:calc(112px * 1.05) 0}
+.cierre{background:var(--dark);color:#fff;text-align:center;padding:calc(106px * 1.05) 0}
 .cierre h2{font-size:clamp(2.1rem,5.2vw,3.5rem);max-width:16ch;margin-inline:auto;letter-spacing:-.028em}
 .cierre h2 em{font-style:normal;color:var(--c)}
 .cierre p{margin:20px auto 0;max-width:48ch;opacity:.8}
@@ -185,7 +187,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.6);padding:54px 0 32px;fon
 .chin.on{opacity:1;transform:translate(-50%,0)}
 body.panel-on .chin{bottom:auto;top:90px}
 @media(max-width:1080px){.visita{grid-template-columns:1fr;gap:36px}}
-@media(max-width:600px){.w{width:calc(100% - 32px)}.sec{padding:calc(112px * .72) 0}}
+@media(max-width:600px){.w{width:calc(100% - 32px)}.sec{padding:calc(106px * .72) 0}}
 
 .rejilla{display:flex;gap:16px;margin-top:40px;overflow-x:auto;padding-bottom:18px;
  scroll-snap-type:x mandatory;scrollbar-width:thin;max-width:100%;min-width:0}
@@ -204,32 +206,18 @@ body.panel-on .chin{bottom:auto;top:90px}
 .pista::before{content:"";width:26px;height:2px;background:var(--a)}
 
 
-.split{display:grid;grid-template-columns:44% 56%;min-height:100vh;max-width:100%}
-.split>*{min-width:0}
-.split-foto{position:sticky;top:0;height:100vh;overflow:hidden;background:var(--dark)}
-.split-foto img{width:100%;height:100%;object-fit:cover}
-.split-foto::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,
- color-mix(in srgb,var(--dark) 55%,transparent),transparent 40%,color-mix(in srgb,var(--dark) 80%,transparent))}
-.split-tx{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:38px;color:#fff}
-.split-tx h1{font-size:clamp(2rem,3.6vw,3.2rem)}
-.split-tx h1 em{font-style:normal;color:var(--c)}
-.split-tx p{margin-top:14px;color:rgba(255,255,255,.84);max-width:38ch}
-.split-tx .cta{margin-top:22px;display:flex;gap:11px;flex-wrap:wrap}
-.split-cont{padding:0;min-width:0;overflow-x:hidden}
-.bloque{padding:54px 46px;border-bottom:1px solid var(--linea)}
-.bloque .rot{margin-bottom:12px}
-.bloque h2{font-size:clamp(1.6rem,3vw,2.3rem)}
-.bloque h2 em{font-style:normal;color:var(--a)}
-.bloque p{color:var(--tinta2);margin-top:12px}
-.datos-r{display:grid;gap:1px;background:var(--linea);border:1px solid var(--linea);border-radius:var(--r);
- overflow:hidden;margin-top:20px}
-.rejilla{grid-template-columns:1fr 1fr}
-@media(max-width:1000px){
- .split{grid-template-columns:1fr}
- .split-foto{position:relative;height:56vh}
- .bloque{padding:44px 24px}
- .rejilla{grid-template-columns:1fr}
-}
+.intro{padding:52px 0 34px;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.intro h1{font-size:clamp(2.2rem,5.4vw,4rem);margin:16px 0 0}
+.intro h1 em{font-style:normal;color:var(--a)}
+.intro p{margin-top:16px;color:var(--tinta2);max-width:44ch}
+.intro-cta{display:flex;gap:11px;flex-wrap:wrap;margin-top:24px}
+.intro-foto{border-radius:var(--r);overflow:hidden;aspect-ratio:5/4;background:var(--dark);position:relative}
+.intro-foto img{width:100%;height:100%;object-fit:cover}
+.franja-d{display:flex;flex-wrap:wrap;gap:1px;background:var(--linea);border-top:1px solid var(--linea);
+ border-bottom:1px solid var(--linea)}
+.franja-d div{flex:1;min-width:200px;background:var(--bg);padding:20px;display:flex;gap:12px;align-items:center;font-size:.92rem}
+.franja-d svg{width:19px;height:19px;color:var(--a);flex:0 0 auto}
+@media(max-width:900px){.intro{grid-template-columns:1fr;gap:28px}}
 
 
 /* ═══ el visor de fotos ═══ */
@@ -271,11 +259,11 @@ body.panel-on .chin{bottom:auto;top:90px}
 }
 
 .pal{display:inline-block;opacity:0;transform:scale(.82);filter:blur(5px);transition:opacity .7s ease,transform .8s cubic-bezier(.16,1,.3,1),filter .6s ease}.pal.va{opacity:1;transform:none;filter:none}
-.js .rv{opacity:0;transform:translateY(32px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}.js .rv.in{opacity:1;transform:none;filter:none}
-.tarj{transition:transform .4s cubic-bezier(.16,1,.3,1),border-color .3s}.tarj .tarj-img img{transition:transform .8s cubic-bezier(.16,1,.3,1),opacity .5s}.tarj:hover .tarj-img img{transform:scale(1.1)}.tarj:hover{transform:translateY(-5px)}
-.avance{height:5px;top:0;background:var(--a);box-shadow:0 0 16px var(--a)}
-.flota{box-shadow:0 14px 34px -10px rgba(37,211,102,.65)}.flota:hover{transform:scale(1.1) translateY(-3px)}
-.flota{right:18px;bottom:92px}
+.js .rv{opacity:0;transform:translateX(-30px);transition:opacity .75s ease,transform .8s cubic-bezier(.16,1,.3,1)}.js .rv.d1{transform:translateX(30px)}.js .rv.in{opacity:1;transform:none;filter:none}
+.tarj{position:relative;transition:transform .35s,border-color .35s}.tarj::before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;border:2px solid transparent;transition:border-color .35s}.tarj:hover::before{border-color:var(--a)}.tarj:hover{transform:translateY(-4px)}
+.avance{height:3px;top:0;background:linear-gradient(90deg,var(--a),var(--c));box-shadow:0 0 12px var(--a)}
+@keyframes subeba{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}.flota{animation:subeba 3s ease-in-out infinite}.flota:hover{transform:scale(1.1)}
+.flota{left:18px;bottom:92px}
 @media(max-width:620px){.flota{bottom:84px}}
 </style>
 </head>
@@ -283,35 +271,27 @@ body.panel-on .chin{bottom:auto;top:90px}
 <div class="aviso">Propuesta de diseño para <b>El Rincón de María</b> — muestra de cómo quedaría su página.</div>
 <main id="inicio">
 
-<div class="split">
-  <div class="split-foto">
-    <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=1900&amp;q=78&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="El Rincón de María" fetchpriority="high">
-    <div class="split-tx">
-      <span class="pill"><i></i>Comida criolla</span>
-      <h1 style="margin-top:16px">El sabor <em>que uno recuerda</em></h1>
-      <p>Recetas que no están escritas en ningún lado, porque se aprendieron de pie junto a la olla.</p>
-      <div class="cta">
-        <a class="btn btn-wa" href="https://wa.me/56998749819?text=%C2%A1Hola%20El%20Rinc%C3%B3n%20de%20Mar%C3%ADa%21%20Quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>Pedir</a>
-        <a class="btn btn-l" style="color:#fff;border-color:rgba(255,255,255,.32)" href="#menu">El menú</a>
-      </div>
+<section class="w intro">
+  <div>
+    <span class="pill" style="background:color-mix(in srgb,var(--a) 14%,transparent);border-color:color-mix(in srgb,var(--a) 34%,transparent);color:var(--a)"><i style="background:var(--a)"></i>Comida criolla</span>
+    <h1>Lo que se cocina <em>hoy en la cocina</em></h1>
+    <p>Se cocina desde temprano y se sirve mientras dure. Cuando se acaba, se acabó.</p>
+    <div class="intro-cta">
+      <a class="btn btn-wa" href="https://wa.me/56998749819?text=%C2%A1Hola%20El%20Rinc%C3%B3n%20de%20Mar%C3%ADa%21%20Quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>Pedir por WhatsApp</a>
+      <a class="btn btn-l" href="#donde">Cómo llegar</a>
     </div>
   </div>
-  <div class="split-cont">
-    <section class="bloque">
-      <span class="rot">Cómo funciona</span>
-      <h2>Pide antes y <em>recoge sin colas</em></h2>
-      <p>Mándanos el pedido por WhatsApp mientras vienes en camino. Te decimos en cuánto está listo
-         y lo preparamos al momento para que solo pases a recogerlo.</p>
-      <div class="datos-r">
-        <div class="dato"><span class="dato-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span><div><b>Horario</b><span>Todos los días: 11:00 am – 9:00 pm</span></div></div>
-        <div class="dato"><span class="dato-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><div><b>Dónde</b><span>Santiago</span></div></div>
-        <div class="dato"><span class="dato-i"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg></span><div><b>WhatsApp</b><span>+56998749819</span></div></div>
-      </div>
-    </section>
-    
+  <div class="intro-foto"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=1900&amp;q=78&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="El Rincón de María" fetchpriority="high"></div>
+</section>
+<div class="franja-d">
+  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Todos los días: 11:00 am – 9:00 pm</div>
+  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Santiago</div>
+  <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H8l-4 4z"/></svg>Pedidos por WhatsApp</div>
+</div>
+
 <section class="sec" id="menu"><div class="w">
   <div class="centro">
-    <span class="rot">La carta</span>
+    <span class="rot">Nuestra cocina</span>
     <h2 class="tit">Lo que <em>servimos</em></h2>
     <p class="baja">Todo se prepara al momento. Toca el <b>+</b> para armar tu pedido y mandarlo por WhatsApp.</p>
   </div>
@@ -319,7 +299,7 @@ body.panel-on .chin{bottom:auto;top:90px}
   <p class="nota">Precios en CLP · los platos son de muestra para esta propuesta</p>
 </div></section>
 
-    
+
 <section class="sec" id="donde" style="padding-top:0"><div class="w visita">
   <div class="rv">
     <div class="mapa">
@@ -341,11 +321,9 @@ body.panel-on .chin{bottom:auto;top:90px}
   </div>
 </div></section>
 
-  </div>
-</div>
 
 <section class="cierre"><div class="w">
-  <h2>Escríbenos <em>y listo</em></h2>
+  <h2>Haz tu pedido <em>ahora</em></h2>
   <p>Mándanos lo que quieres por WhatsApp y lo tenemos listo cuando llegues.</p>
   <a class="btn btn-wa" href="https://wa.me/56998749819?text=%C2%A1Hola%20El%20Rinc%C3%B3n%20de%20Mar%C3%ADa%21%20Quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>Pedir por WhatsApp</a>
 </div></section>
@@ -376,7 +354,7 @@ body.panel-on .chin{bottom:auto;top:90px}
 <script>
 document.documentElement.className += " js";
 (function(){
-const WA="56998749819", MON="$", NEG="El Rincón de María", PLATOS=[{"id": "p0", "n": "Almuerzo del día", "p": "$6.100", "v": 6100.0, "d": "Sopa, plato fuerte, arroz, ensalada y jugo natural.", "e": "🍛", "img": "https://images.unsplash.com/photo-1623188475375-dcb897bfdb66?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p1", "n": "Pescado frito", "p": "$13.650", "v": 13650.0, "d": "Entero y crujiente, con tostones y ensalada.", "e": "🐟", "img": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p2", "n": "Arroz con pollo", "p": "$8.650", "v": 8650.0, "d": "Con su punto de sazón y verduras.", "e": "🍚", "img": "https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": "Nuestro clásico"}, {"id": "p3", "n": "Jugo natural", "p": "$3.175", "v": 3175.0, "d": "De la fruta que haya ese día, bien frío.", "e": "🥤", "img": "https://images.unsplash.com/photo-1583549323543-7ae855a78d6d?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p4", "n": "Sopa del día", "p": "$6.725", "v": 6725.0, "d": "Cambia cada jornada. Pregunte cuál hay hoy.", "e": "🥣", "img": "https://images.unsplash.com/photo-1607330289024-1535c6b4e1c1?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p5", "n": "Mofongo", "p": "$9.950", "v": 9950.0, "d": "Machacado al momento, con chicharrón y ajo.", "e": "🥔", "img": "https://images.unsplash.com/photo-1617904116128-f55dd979f087?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}];
+const WA="56998749819", MON="$", NEG="El Rincón de María", PLATOS=[{"id": "p0", "n": "Pollo guisado", "p": "$8.800", "v": 8800.0, "d": "El de todos los días, el que nunca falla.", "e": "🍗", "img": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p1", "n": "Pescado frito", "p": "$12.225", "v": 12225.0, "d": "Entero y crujiente, con tostones y ensalada.", "e": "🐟", "img": "https://images.unsplash.com/photo-1611599537845-1c7aca0091c0?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p2", "n": "Mofongo", "p": "$10.250", "v": 10250.0, "d": "Machacado al momento, con chicharrón y ajo.", "e": "🥔", "img": "https://images.unsplash.com/photo-1617904116128-f55dd979f087?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p3", "n": "Arroz con pollo", "p": "$8.650", "v": 8650.0, "d": "Con su punto de sazón y verduras.", "e": "🍚", "img": "https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p4", "n": "Sancocho", "p": "$11.125", "v": 11125.0, "d": "Cocido despacio desde temprano, con su yuca y su plátano.", "e": "🍲", "img": "https://images.unsplash.com/photo-1687419950105-b1cdeb6c66bc?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": "Del día"}, {"id": "p5", "n": "Chivo guisado", "p": "$11.600", "v": 11600.0, "d": "Con su orégano y su tiempo. De los que piden dos veces.", "e": "🍖", "img": "https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}];
 const ICO='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>';
 const $=s=>document.querySelector(s);
 document.getElementById("rejilla").innerHTML = PLATOS.map(p => {
@@ -541,7 +519,7 @@ if(hi && !window.matchMedia("(prefers-reduced-motion:reduce)").matches){
 
 (function(){ var f=document.querySelector(".hero-img, .portada img, .hero img"); if(!f) return;
   var g=function(){ var y=window.scrollY;
-    if(y<900) f.style.transform="translate3d(0,"+(y*0.22)+"px,0) scale("+(1+y*0.00012)+")"; };
+    if(y<900) f.style.transform="translate3d(0,"+(y*0.16)+"px,0) scale("+(1+y*0.00012)+")"; };
   window.addEventListener("scroll",g,{passive:true}); g(); })();
 
 (function(){

@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- Muestra sin vender: que no salga en Google, para no confundir las
+     busquedas del negocio real. Quitalo el dia que el cliente pague. -->
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#372D1F">
 <title>Cocina Económica Doña Miriam | Mérida</title>
@@ -19,7 +21,7 @@
  --bg:#F9F5F1; --panel:#FFFFFF; --tinta:#191510; --tinta2:#51483E; --suave:#80766B;
  --dark:#372D1F; --a:#9E651F; --c:#A4B715; --wa:#25D366;
  --linea:rgba(0,0,0,.11); --sobreA:#FFFFFF;
- --disp:"Rozha One",Georgia,serif; --sans:"Mulish",system-ui,sans-serif; --pesoD:400; --r:16px; --esc:0.99;
+ --disp:"Rozha One",Georgia,serif; --sans:"Mulish",system-ui,sans-serif; --pesoD:400; --r:4px; --esc:0.98;
 }
 *,*::before,*::after{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -61,9 +63,9 @@ p{margin:0}
  display:grid;place-items:center;font-size:1.45rem;font-style:normal}
 .marca b{display:block;font-family:var(--disp);font-size:1.2rem;line-height:1.12;font-weight:var(--pesoD)}
 .marca span{display:block;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);margin-top:4px}
-.sec{padding:99px 0}
+.sec{padding:100px 0}
 .rot{display:inline-flex;align-items:center;gap:12px;font-size:.71rem;font-weight:700;
- letter-spacing:0.17em;text-transform:uppercase;color:var(--a)}
+ letter-spacing:0.20em;text-transform:uppercase;color:var(--a)}
 .rot::before{content:"";width:26px;height:1.5px;background:var(--a)}
 .tit{font-size:clamp(2.1rem,4.8vw,3.5rem);margin:20px 0 0;max-width:17ch;letter-spacing:-.028em}
 .tit em{font-style:normal;color:var(--a)}
@@ -121,7 +123,7 @@ p{margin:0}
 .dato b{display:block;font-size:.67rem;letter-spacing:.15em;text-transform:uppercase;color:var(--suave)}
 .dato span{display:block;font-weight:500;margin-top:3px}
 .dato a{color:var(--a);font-weight:700}
-.cierre{background:var(--dark);color:#fff;text-align:center;padding:calc(99px * 1.05) 0}
+.cierre{background:var(--dark);color:#fff;text-align:center;padding:calc(100px * 1.05) 0}
 .cierre h2{font-size:clamp(2.1rem,5.2vw,3.5rem);max-width:16ch;margin-inline:auto;letter-spacing:-.028em}
 .cierre h2 em{font-style:normal;color:var(--c)}
 .cierre p{margin:20px auto 0;max-width:48ch;opacity:.8}
@@ -185,47 +187,50 @@ footer{background:var(--dark);color:rgba(255,255,255,.6);padding:54px 0 32px;fon
 .chin.on{opacity:1;transform:translate(-50%,0)}
 body.panel-on .chin{bottom:auto;top:90px}
 @media(max-width:1080px){.visita{grid-template-columns:1fr;gap:36px}}
-@media(max-width:600px){.w{width:calc(100% - 32px)}.sec{padding:calc(99px * .72) 0}}
+@media(max-width:600px){.w{width:calc(100% - 32px)}.sec{padding:calc(100px * .72) 0}}
 
-.rejilla{display:grid;grid-template-columns:1fr;gap:0;max-width:820px;margin:38px auto 0}
-.tarj{display:flex;gap:20px;align-items:stretch;background:transparent;border:0;
- border-bottom:1px solid var(--linea);border-radius:0;padding:20px 0;transition:opacity .3s}
-.tarj:last-child{border-bottom:0}
-.tarj-img{width:150px;height:150px;flex:0 0 auto;border-radius:14px;overflow:hidden;position:relative;
- background:color-mix(in srgb,var(--tinta) 8%,var(--panel))}
-.tarj-tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:8px;padding:4px 0}
-.tarj-cab{display:flex;justify-content:space-between;align-items:baseline;gap:16px;min-width:0;flex-wrap:wrap}
-.tarj h3{font-size:1.3rem}
-.tarj .pz{font-family:var(--disp);font-size:1.5rem;color:var(--a);white-space:nowrap}
-.tarj p{flex:1}
-@media(max-width:600px){
- .tarj-img{width:88px;height:88px}.tarj{gap:13px}
- .tarj h3{font-size:1.08rem}
- .tarj .pz{font-size:1.16rem}
-}
+.rejilla{display:flex;gap:16px;margin-top:40px;overflow-x:auto;padding-bottom:18px;
+ scroll-snap-type:x mandatory;scrollbar-width:thin;max-width:100%;min-width:0}
+.rejilla::-webkit-scrollbar{height:8px}
+.rejilla::-webkit-scrollbar-thumb{background:color-mix(in srgb,var(--tinta) 22%,transparent);border-radius:100px}
+.tarj{flex:0 0 clamp(250px,72vw,310px);scroll-snap-align:start;background:var(--panel);
+ border:1px solid var(--linea);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;
+ transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .3s}
+.tarj:hover{transform:translateY(-5px);border-color:var(--a)}
+.tarj-img{aspect-ratio:1;overflow:hidden;position:relative;background:color-mix(in srgb,var(--tinta) 8%,var(--panel))}
+.tarj-tx{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.tarj-cab{display:flex;flex-direction:column;gap:3px}
+.tarj h3{font-size:1.14rem}
+.tarj .pz{font-family:var(--disp);font-size:1.5rem;color:var(--a)}
+.pista{display:flex;align-items:center;gap:9px;margin-top:14px;font-size:.82rem;color:var(--suave)}
+.pista::before{content:"";width:26px;height:2px;background:var(--a)}
 
 
-.port{position:relative;height:min(76vh,640px);overflow:hidden;background:var(--dark);display:flex;align-items:flex-end}
-.port img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;will-change:transform}
-.port::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,
- color-mix(in srgb,var(--dark) 40%,transparent),transparent 45%,color-mix(in srgb,var(--dark) 92%,transparent))}
-.port-tx{position:relative;z-index:2;padding:0 0 52px;color:#fff;width:100%}
-.port-tx .mini{font-family:var(--sans);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--c)}
-.port-tx h1{font-size:clamp(2.4rem,6.4vw,5rem);margin:16px 0 0;max-width:15ch}
-.port-tx h1 em{font-style:normal;color:var(--c)}
-.cap{padding:76px 0;text-align:center}
-.cap .num{font-family:var(--sans);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--a)}
-.cap h2{font-size:clamp(1.9rem,4.4vw,3rem);margin:14px 0 20px}
-.cap h2 em{font-style:normal;color:var(--a)}
-.cap p{color:var(--tinta2);max-width:56ch;margin-inline:auto}
-.duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px}
-.duo figure{margin:0;border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;background:var(--dark);position:relative}
-.duo img{width:100%;height:100%;object-fit:cover}
-.datos-al{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:34px;text-align:center}
-.datos-al svg{width:20px;height:20px;color:var(--a);margin-inline:auto}
-.datos-al b{display:block;font-family:var(--sans);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
- color:var(--suave);margin:9px 0 4px}
-@media(max-width:700px){.duo,.datos-al{grid-template-columns:1fr;gap:14px}.cap{padding:54px 0}}
+.hero{position:relative;min-height:min(86vh,720px);display:flex;align-items:center;overflow:hidden;background:var(--dark)}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;will-change:transform}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(95deg,
+ color-mix(in srgb,var(--dark) 95%,transparent) 0%,color-mix(in srgb,var(--dark) 86%,transparent) 44%,
+ color-mix(in srgb,var(--dark) 42%,transparent) 74%,color-mix(in srgb,var(--dark) 68%,transparent) 100%)}
+.hero-in{position:relative;z-index:2;padding:86px 0;color:#fff}
+.hero h1{font-size:clamp(2.7rem,7vw,5.2rem);margin:22px 0 0;max-width:14ch}
+.hero h1 em{font-style:normal;color:var(--c)}
+.hero p{margin-top:20px;font-size:1.12rem;max-width:45ch;color:rgba(255,255,255,.85)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero-d{display:flex;flex-wrap:wrap;gap:14px 30px;margin-top:40px;padding-top:24px;
+ border-top:1px solid rgba(255,255,255,.2);font-size:.9rem;color:rgba(255,255,255,.8)}
+.hero-d span{display:inline-flex;align-items:center;gap:9px}
+.hero-d svg{width:16px;height:16px;color:var(--c)}
+.pasos{background:var(--a);color:var(--sobreA);padding:52px 0}
+.pasos h2{font-size:clamp(1.6rem,3.4vw,2.2rem);margin-bottom:26px}
+.pasos-g{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.paso{position:relative;padding-left:54px}
+.paso .n{position:absolute;left:0;top:-2px;width:40px;height:40px;border-radius:50%;background:var(--sobreA);
+ color:var(--a);display:grid;place-items:center;font-family:var(--disp);font-size:1.2rem}
+.paso b{display:block;font-family:var(--disp);font-size:1.14rem;margin-bottom:4px}
+.paso p{font-size:.92rem;opacity:.86}
+@media(max-width:900px){.pasos-g{grid-template-columns:1fr;gap:24px}}
+@media(max-width:600px){.hero{min-height:auto}.hero-in{padding:56px 0}}
 
 
 /* ═══ el visor de fotos ═══ */
@@ -266,11 +271,11 @@ body.panel-on .chin{bottom:auto;top:90px}
   .flota{animation:none}.tarj:hover{transform:none}
 }
 
-.pal{display:inline-block;opacity:0;transform:translateY(26px) rotate(1.5deg);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}.pal.va{opacity:1;transform:none}
+.pal{display:inline-block;opacity:0;transform:translateX(-26px) skewX(-6deg);transition:opacity .6s ease,transform .75s cubic-bezier(.16,1,.3,1)}.pal.va{opacity:1;transform:none}
 .js .rv{opacity:0;transform:translateY(26px) scale(.982);filter:blur(4px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1),filter .55s ease}.js .rv.in{opacity:1;transform:none;filter:none}
-.tarj{transition:transform .4s cubic-bezier(.16,1,.3,1),border-color .3s}.tarj .tarj-img img{transition:transform .8s cubic-bezier(.16,1,.3,1),opacity .5s}.tarj:hover .tarj-img img{transform:scale(1.1)}.tarj:hover{transform:translateY(-5px)}
-.avance{height:3px;top:0;background:linear-gradient(90deg,var(--a),var(--c));box-shadow:0 0 12px var(--a)}
-@keyframes subeba{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}.flota{animation:subeba 3s ease-in-out infinite}.flota:hover{transform:scale(1.1)}
+.tarj{transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s,border-color .3s}.tarj:hover{transform:translateY(-9px);box-shadow:0 26px 50px -22px rgba(0,0,0,.5)}
+.avance{height:5px;top:0;background:var(--a);box-shadow:0 0 16px var(--a)}
+.flota{box-shadow:0 14px 34px -10px rgba(37,211,102,.65)}.flota:hover{transform:scale(1.1) translateY(-3px)}
 .flota{left:18px;bottom:92px}
 @media(max-width:620px){.flota{bottom:84px}}
 </style>
@@ -279,35 +284,31 @@ body.panel-on .chin{bottom:auto;top:90px}
 <div class="aviso">Propuesta de diseño para <b>Cocina Económica Doña Miriam</b> — muestra de cómo quedaría su página.</div>
 <main id="inicio">
 
-<header class="port">
-  <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=1900&amp;q=78&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="Cocina Económica Doña Miriam" fetchpriority="high">
-  <div class="w port-tx">
-    <p class="mini">Comida criolla · Mérida</p>
-    <h1>La cocina <em>de toda la vida</em></h1>
-    <div style="margin-top:26px;display:flex;gap:12px;flex-wrap:wrap">
+<section class="hero">
+  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1583549323543-7ae855a78d6d?w=1900&amp;q=78&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="Cocina Económica Doña Miriam" fetchpriority="high"></div>
+  <div class="w hero-in">
+    <span class="pill"><i></i>Comida criolla en Mérida</span>
+    <h1>De la olla <em>a tu plato</em></h1>
+    <p>Recetas que no están escritas en ningún lado, porque se aprendieron de pie junto a la olla.</p>
+    <div class="hero-cta">
       <a class="btn btn-wa" href="https://wa.me/529991640870?text=%C2%A1Hola%20Cocina%20Econ%C3%B3mica%20Do%C3%B1a%20Miriam%21%20Quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>Pedir por WhatsApp</a>
       <a class="btn btn-l" style="color:#fff;border-color:rgba(255,255,255,.32)" href="#menu">Ver el menú</a>
     </div>
+    <div class="hero-d"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Todos los días: 11:00 am – 9:00 pm</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H8l-4 4z"/></svg>Pedidos por WhatsApp</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Mérida</span></div>
   </div>
-</header>
-<section class="cap"><div class="w">
-  <p class="num">I · La casa</p>
-  <h2>La cocina <em>de toda la vida</em></h2>
-  <p>Recetas que no están escritas en ningún lado, porque se aprendieron de pie junto a la olla.</p>
-  <div class="duo">
-    <figure><img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=900&amp;q=74&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="" loading="lazy"></figure>
-    <figure><img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=900&amp;q=74&amp;fm=jpg&amp;fit=crop&amp;auto=format&amp;crop=entropy" alt="" loading="lazy"></figure>
-  </div>
-  <div class="datos-al">
-    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><b>Horario</b><span>Todos los días: 11:00 am – 9:00 pm</span></div>
-    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><b>Dónde</b><span>Mérida</span></div>
-    <div><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg><b>WhatsApp</b><span>+529991640870</span></div>
+</section>
+<section class="pasos"><div class="w">
+  <h2>Pide antes y recoge sin esperar</h2>
+  <div class="pasos-g">
+    <div class="paso"><span class="n">1</span><b>Escríbenos</b><p>Mándanos tu pedido mientras vienes en camino.</p></div>
+    <div class="paso"><span class="n">2</span><b>Lo preparamos</b><p>Te decimos en cuánto está listo y lo hacemos al momento.</p></div>
+    <div class="paso"><span class="n">3</span><b>Pasas y recoges</b><p>Llegas, lo recoges y sigues tu camino.</p></div>
   </div>
 </div></section>
 
 <section class="sec" id="menu"><div class="w">
   <div class="centro">
-    <span class="rot">Para comer hoy</span>
+    <span class="rot">Nuestra cocina</span>
     <h2 class="tit">Para <em>escoger</em></h2>
     <p class="baja">Todo se prepara al momento. Toca el <b>+</b> para armar tu pedido y mandarlo por WhatsApp.</p>
   </div>
@@ -339,7 +340,7 @@ body.panel-on .chin{bottom:auto;top:90px}
 
 
 <section class="cierre"><div class="w">
-  <h2>Escríbenos <em>y listo</em></h2>
+  <h2>Tu pedido, <em>en un mensaje</em></h2>
   <p>Mándanos lo que quieres por WhatsApp y lo tenemos listo cuando llegues.</p>
   <a class="btn btn-wa" href="https://wa.me/529991640870?text=%C2%A1Hola%20Cocina%20Econ%C3%B3mica%20Do%C3%B1a%20Miriam%21%20Quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>Pedir por WhatsApp</a>
 </div></section>
@@ -370,7 +371,7 @@ body.panel-on .chin{bottom:auto;top:90px}
 <script>
 document.documentElement.className += " js";
 (function(){
-const WA="529991640870", MON="$", NEG="Cocina Económica Doña Miriam", PLATOS=[{"id": "p0", "n": "Sancocho", "p": "$150", "v": 150.0, "d": "Cocido despacio desde temprano, con su yuca y su plátano.", "e": "🍲", "img": "https://images.unsplash.com/photo-1607330289024-1535c6b4e1c1?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p1", "n": "Carne guisada", "p": "$150", "v": 150.0, "d": "Cocida lento hasta deshacerse sola, con arroz blanco.", "e": "🥘", "img": "https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p2", "n": "Jugo natural", "p": "$50", "v": 50.0, "d": "De la fruta que haya ese día, bien frío.", "e": "🥤", "img": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p3", "n": "Arroz con pollo", "p": "$150", "v": 150.0, "d": "Con su punto de sazón y verduras.", "e": "🍚", "img": "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": "Nuestro clásico"}, {"id": "p4", "n": "Pescado frito", "p": "$225", "v": 225.0, "d": "Entero y crujiente, con tostones y ensalada.", "e": "🐟", "img": "https://images.unsplash.com/photo-1580959375944-abd7e991f971?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p5", "n": "Almuerzo del día", "p": "$125", "v": 125.0, "d": "Sopa, plato fuerte, arroz, ensalada y jugo natural.", "e": "🍛", "img": "https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}];
+const WA="529991640870", MON="$", NEG="Cocina Económica Doña Miriam", PLATOS=[{"id": "p0", "n": "Almuerzo del día", "p": "$125", "v": 125.0, "d": "Sopa, plato fuerte, arroz, ensalada y jugo natural.", "e": "🍛", "img": "https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p1", "n": "Res mechada", "p": "$150", "v": 150.0, "d": "Deshilachada en su salsa, con arroz y habichuelas.", "e": "🥩", "img": "https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p2", "n": "Pollo guisado", "p": "$150", "v": 150.0, "d": "El de todos los días, el que nunca falla.", "e": "🍗", "img": "https://images.unsplash.com/photo-1606626135925-0cd311a3624e?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p3", "n": "Carne guisada", "p": "$150", "v": 150.0, "d": "Cocida lento hasta deshacerse sola, con arroz blanco.", "e": "🥘", "img": "https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": "Del día"}, {"id": "p4", "n": "Sancocho", "p": "$175", "v": 175.0, "d": "Cocido despacio desde temprano, con su yuca y su plátano.", "e": "🍲", "img": "https://images.unsplash.com/photo-1665593998976-d957f2827fe7?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p5", "n": "Jugo natural", "p": "$50", "v": 50.0, "d": "De la fruta que haya ese día, bien frío.", "e": "🥤", "img": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}];
 const ICO='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>';
 const $=s=>document.querySelector(s);
 document.getElementById("rejilla").innerHTML = PLATOS.map(p => {
@@ -384,7 +385,7 @@ document.getElementById("rejilla").innerHTML = PLATOS.map(p => {
   return '<article class="tarj" data-id="'+p.id+'">'+
     '<div class="tarj-img" data-emoji="'+p.e+'">'+(p.s?'<span class="sello">'+p.s+'</span>':'')+
       '<img src="'+p.img+'" alt="'+p.n+'" decoding="async"></div>'+
-    '<div class="tarj-tx"><div class="tarj-cab"><h3>'+p.n+'</h3><span class="pz">'+p.p+'</span></div>'+
+    '<div class="tarj-tx"><div class="tarj-cab"><span class="pz">'+p.p+'</span><h3>'+p.n+'</h3></div>'+
     '<p>'+p.d+'</p>'+ACC+'</div></article>';
 
 }).join("");
@@ -529,14 +530,9 @@ if(hi && !window.matchMedia("(prefers-reduced-motion:reduce)").matches){
   });
   h1.innerHTML=""; t.forEach(function(x){ h1.appendChild(x); });
   var P=h1.querySelectorAll(".pal");
-  P.forEach(function(x,i){ setTimeout(function(){ x.classList.add("va"); }, 170+i*72); });
+  P.forEach(function(x,i){ setTimeout(function(){ x.classList.add("va"); }, 170+i*62); });
   setTimeout(function(){ P.forEach(function(x){ x.classList.add("va"); }); }, 2600);
 })();
-
-(function(){ var f=document.querySelector(".hero-img, .portada img, .hero img"); if(!f) return;
-  var g=function(){ var y=window.scrollY;
-    if(y<900) f.style.transform="translate3d(0,"+(y*0.16)+"px,0) scale("+(1+y*0.00012)+")"; };
-  window.addEventListener("scroll",g,{passive:true}); g(); })();
 
 (function(){
   var v=document.createElement("div"); v.className="visor";

@@ -21,7 +21,7 @@
  --bg:#F7F3F2; --panel:#FFFFFF; --tinta:#1E1615; --tinta2:#5B4543; --suave:#96716E;
  --dark:#251513; --a:#A82D24; --c:#1CB070; --wa:#25D366;
  --linea:rgba(0,0,0,.11); --sobreA:#FFFFFF;
- --disp:"Gilda Display",Georgia,serif; --sans:"Mulish",system-ui,sans-serif; --pesoD:400; --r:26px; --esc:1.00;
+ --disp:"Gilda Display",Georgia,serif; --sans:"Mulish",system-ui,sans-serif; --pesoD:400; --r:2px; --esc:1.03;
 }
 *,*::before,*::after{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -63,9 +63,9 @@ p{margin:0}
  display:grid;place-items:center;font-size:1.45rem;font-style:normal}
 .marca b{display:block;font-family:var(--disp);font-size:1.2rem;line-height:1.12;font-weight:var(--pesoD)}
 .marca span{display:block;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);margin-top:4px}
-.sec{padding:111px 0}
+.sec{padding:104px 0}
 .rot{display:inline-flex;align-items:center;gap:12px;font-size:.71rem;font-weight:700;
- letter-spacing:0.24em;text-transform:uppercase;color:var(--a)}
+ letter-spacing:0.16em;text-transform:uppercase;color:var(--a)}
 .rot::before{content:"";width:26px;height:1.5px;background:var(--a)}
 .tit{font-size:clamp(2.1rem,4.8vw,3.5rem);margin:20px 0 0;max-width:17ch;letter-spacing:-.028em}
 .tit em{font-style:normal;color:var(--a)}
@@ -123,7 +123,7 @@ p{margin:0}
 .dato b{display:block;font-size:.67rem;letter-spacing:.15em;text-transform:uppercase;color:var(--suave)}
 .dato span{display:block;font-weight:500;margin-top:3px}
 .dato a{color:var(--a);font-weight:700}
-.cierre{background:var(--dark);color:#fff;text-align:center;padding:calc(111px * 1.05) 0}
+.cierre{background:var(--dark);color:#fff;text-align:center;padding:calc(104px * 1.05) 0}
 .cierre h2{font-size:clamp(2.1rem,5.2vw,3.5rem);max-width:16ch;margin-inline:auto;letter-spacing:-.028em}
 .cierre h2 em{font-style:normal;color:var(--c)}
 .cierre p{margin:20px auto 0;max-width:48ch;opacity:.8}
@@ -187,56 +187,49 @@ footer{background:var(--dark);color:rgba(255,255,255,.6);padding:54px 0 32px;fon
 .chin.on{opacity:1;transform:translate(-50%,0)}
 body.panel-on .chin{bottom:auto;top:90px}
 @media(max-width:1080px){.visita{grid-template-columns:1fr;gap:36px}}
-@media(max-width:600px){.w{width:calc(100% - 32px)}.sec{padding:calc(111px * .72) 0}}
+@media(max-width:600px){.w{width:calc(100% - 32px)}.sec{padding:calc(104px * .72) 0}}
 
-.rejilla{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:42px}
-.tarj{background:var(--panel);border:1px solid var(--linea);border-radius:var(--r);overflow:hidden;
- grid-column:span 2;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .3s}
-.tarj:hover{transform:translateY(-5px);border-color:var(--a)}
-.tarj:nth-child(1){grid-column:span 4;flex-direction:row}
-.tarj:nth-child(1) .tarj-img{width:52%;aspect-ratio:auto}
-.tarj:nth-child(1) .tarj-tx{flex:1;justify-content:center;padding:34px}
-.tarj:nth-child(1) h3{font-size:1.8rem}
-.tarj:nth-child(1) .pz{font-size:2rem}
-.tarj-img{aspect-ratio:16/10;overflow:hidden;position:relative;background:color-mix(in srgb,var(--tinta) 8%,var(--panel))}
-.tarj-tx{padding:20px 22px 22px;display:flex;flex-direction:column;gap:9px;flex:1}
-.tarj-cab{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
-.tarj h3{font-size:1.18rem}
-.tarj .pz{font-family:var(--disp);font-size:1.36rem;color:var(--a);white-space:nowrap}
-@media(max-width:900px){
- .rejilla{grid-template-columns:1fr 1fr}
- .tarj{grid-column:span 1}
- .tarj:nth-child(1){grid-column:span 2;flex-direction:column}
- .tarj:nth-child(1) .tarj-img{width:100%;aspect-ratio:16/10}
-}
-@media(max-width:620px){.rejilla{grid-template-columns:1fr}.tarj:nth-child(1){grid-column:span 1}}
+.rejilla{display:grid;grid-template-columns:1fr 1fr;gap:6px 52px;margin-top:40px}
+.tarj{background:transparent;border:0;border-bottom:1px dashed color-mix(in srgb,var(--tinta) 26%,transparent);
+ border-radius:0;padding:18px 0;display:block}
+.tarj:hover{transform:none}
+.tarj-img{display:none}
+.tarj.con-foto .tarj-img{display:block;float:left;width:86px;height:86px;border-radius:12px;overflow:hidden;
+ position:relative;margin:0 16px 8px 0;background:color-mix(in srgb,var(--tinta) 8%,var(--panel))}
+.tarj-cab{display:flex;align-items:baseline;gap:12px}
+.tarj h3{font-size:1.18rem;flex:0 0 auto;max-width:70%}
+.punt{flex:1;border-bottom:1.5px dotted color-mix(in srgb,var(--tinta) 30%,transparent);transform:translateY(-4px)}
+.tarj .pz{font-family:var(--disp);font-size:1.26rem;color:var(--a);white-space:nowrap}
+.tarj p{margin-top:6px;font-size:.88rem}
+.tarj .acc{margin-top:12px;clear:both}
+@media(max-width:900px){.rejilla{grid-template-columns:1fr;gap:0}}
 
 
-.filete{height:5px;background:var(--a)}
-.enc{text-align:center;padding:64px 0 44px}
-.enc .mini{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--suave)}
-.enc h1{font-size:clamp(2.4rem,6vw,4.4rem);margin:22px 0 0}
-.enc h1 em{font-style:normal;color:var(--a)}
-.orna{display:flex;align-items:center;justify-content:center;gap:14px;margin:26px 0}
-.orna::before,.orna::after{content:"";width:56px;height:1px;background:var(--linea)}
-.orna i{width:7px;height:7px;background:var(--a);transform:rotate(45deg);display:block}
-.enc p{max-width:50ch;margin:0 auto;color:var(--tinta2)}
-.enc .cta{margin-top:26px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-.foto-ancha{height:min(46vh,380px);overflow:hidden;position:relative;background:var(--dark)}
-.foto-ancha img{width:100%;height:100%;object-fit:cover}
-.tira-datos{border-bottom:1px solid var(--linea);padding:20px 0}
-.tira-datos .w{display:flex;justify-content:center;gap:clamp(22px,6vw,60px);flex-wrap:wrap;text-align:center;font-size:.9rem}
-.tira-datos span{display:inline-flex;align-items:center;gap:9px;color:var(--tinta2)}
-.tira-datos svg{width:16px;height:16px;color:var(--a)}
-/* el menú de esta forma va en lista, no en rejilla */
-.rejilla{display:grid;grid-template-columns:1fr;gap:0;max-width:760px;margin-inline:auto}
-.tarj{flex-direction:row;align-items:stretch;border:0;border-bottom:1px solid var(--linea);border-radius:0;background:transparent}
-.tarj:hover{transform:none;border-color:var(--linea)}
-.tarj-img{width:132px;flex:0 0 auto;aspect-ratio:1;border-radius:14px;margin:16px 0 16px 0}
-.tarj-tx{padding:18px 0 18px 20px}
-.tarj h3{font-size:1.24rem}
-.acc{margin-top:8px}
-@media(max-width:600px){.tarj-img{width:96px}.tarj-tx{padding-left:14px}}
+.cinta-av{background:var(--c);color:#1A1206;text-align:center;padding:11px 16px;font-size:.9rem;font-weight:800}
+.cab-m{padding:26px 0 6px}
+.cab-m .w{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.abierto-m{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--linea);border-radius:100px;
+ padding:9px 17px;font-size:.85rem;color:var(--tinta2)}
+.abierto-m i{width:8px;height:8px;border-radius:50%;background:#2FA84F;display:block;
+ box-shadow:0 0 0 4px rgba(47,168,79,.2)}
+.destacado{padding:24px 0 44px}
+.dest-caja{background:var(--dark);color:#fff;border-radius:var(--r);overflow:hidden;
+ display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+.dest-foto{position:relative;min-height:300px}
+.dest-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.dest-tx{padding:clamp(28px,4.4vw,50px);display:flex;flex-direction:column;justify-content:center}
+.dest-tx h1{font-size:clamp(2rem,4.6vw,3.4rem)}
+.dest-tx h1 em{font-style:normal;color:var(--c)}
+.dest-tx p{margin-top:14px;color:rgba(255,255,255,.82);max-width:40ch}
+.dest-tx .cta{margin-top:26px;display:flex;gap:11px;flex-wrap:wrap}
+.dest-datos{display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:26px;padding-top:20px;
+ border-top:1px solid rgba(255,255,255,.2);font-size:.88rem;color:rgba(255,255,255,.8)}
+.dest-datos span{display:inline-flex;align-items:center;gap:8px}
+.dest-datos svg{width:15px;height:15px;color:var(--c)}
+/* precios más grandes en esta forma */
+.tarj .pz{font-size:1.9rem}
+.tarj-cab{flex-direction:column;align-items:flex-start;gap:2px}
+@media(max-width:900px){.dest-caja{grid-template-columns:1fr}.dest-foto{min-height:220px}}
 
 
 /* ═══ el visor de fotos ═══ */
@@ -277,12 +270,12 @@ body.panel-on .chin{bottom:auto;top:90px}
   .flota{animation:none}.tarj:hover{transform:none}
 }
 
-.pal{display:inline-block;opacity:0;transform:translateY(100%);transition:opacity .55s ease,transform .8s cubic-bezier(.16,1,.3,1)}.pal.va{opacity:1;transform:none}h1{overflow:hidden}
+.pal{display:inline-block;opacity:0;transform:translateY(26px) rotate(1.5deg);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}.pal.va{opacity:1;transform:none}
 .js .rv{opacity:0;transform:translateX(-30px);transition:opacity .75s ease,transform .8s cubic-bezier(.16,1,.3,1)}.js .rv.d1{transform:translateX(30px)}.js .rv.in{opacity:1;transform:none;filter:none}
-.tarj{position:relative;overflow:hidden;transition:transform .38s cubic-bezier(.16,1,.3,1),border-color .3s}.tarj::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.10),transparent 42%);transition:opacity .35s}.tarj:hover::after{opacity:1}.tarj:hover{transform:translateY(-6px)}
-.avance{height:5px;top:0;background:var(--a);box-shadow:0 0 16px var(--a)}
-@keyframes latido{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}}.flota{animation:latido 2.6s infinite}.flota:hover{transform:scale(1.09) rotate(-6deg)}
-.flota{left:18px;bottom:92px}
+.tarj{transition:transform .4s cubic-bezier(.16,1,.3,1),border-color .3s}.tarj .tarj-img img{transition:transform .8s cubic-bezier(.16,1,.3,1),opacity .5s}.tarj:hover .tarj-img img{transform:scale(1.1)}.tarj:hover{transform:translateY(-5px)}
+.avance{height:3px;top:0;background:linear-gradient(90deg,var(--a),var(--c));box-shadow:0 0 12px var(--a)}
+.flota{box-shadow:0 14px 34px -10px rgba(37,211,102,.65)}.flota:hover{transform:scale(1.1) translateY(-3px)}
+.flota{right:18px;bottom:92px}
 @media(max-width:620px){.flota{bottom:84px}}
 </style>
 </head>
@@ -290,25 +283,27 @@ body.panel-on .chin{bottom:auto;top:90px}
 <div class="aviso">Propuesta de diseño para <b>El Caserito Colombiano</b> — muestra de cómo quedaría su página.</div>
 <main id="inicio">
 
-<div class="filete"></div>
-<header class="enc"><div class="w">
-  <p class="mini">Comida criolla · Bogotá</p>
-  <h1>Comida de casa,<br><em>hecha cada mañana</em></h1>
-  <div class="orna" aria-hidden="true"><i></i></div>
-  <p>Porciones de verdad y precios de barrio. Para llevar o para quedarte.</p>
-  <div class="cta">
-    <a class="btn btn-wa" href="https://wa.me/573214596699?text=%C2%A1Hola%20El%20Caserito%20Colombiano%21%20Quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>Pedir por WhatsApp</a>
-    <a class="btn btn-l" href="#menu">Ver la carta</a>
-  </div>
+<div class="cinta-av">Pedidos por WhatsApp · listo en unos minutos</div>
+<header class="cab-m"><div class="w">
+  <a class="marca" href="#inicio"><i>🍛</i><span><b>El Caserito Colombiano</b><span>Comida criolla</span></span></a>
+  <span class="abierto-m"><i></i>Todos los días: 11:00 am – 9:00 pm</span>
 </div></header>
-<div class="foto-ancha"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=1900&amp;q=78&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="El Caserito Colombiano" fetchpriority="high"></div>
-<div class="tira-datos"><div class="w">
-  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Todos los días: 11:00 am – 9:00 pm</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Bogotá</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H8l-4 4z"/></svg>Pedidos por WhatsApp</span>
-</div></div>
+<section class="destacado"><div class="w"><div class="dest-caja">
+  <div class="dest-tx">
+    <h1>Se cocina temprano, <em>se sirve caliente</em></h1>
+    <p>Porciones de verdad y precios de barrio. Para llevar o para quedarte.</p>
+    <div class="cta">
+      <a class="btn btn-wa" href="https://wa.me/573214596699?text=%C2%A1Hola%20El%20Caserito%20Colombiano%21%20Quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>Pedir por WhatsApp</a>
+      <a class="btn btn-l" style="color:#fff;border-color:rgba(255,255,255,.32)" href="#menu">Ver precios</a>
+    </div>
+    <div class="dest-datos"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Bogotá</span><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>+573214596699</span></div>
+  </div>
+  <div class="dest-foto"><img src="https://images.unsplash.com/photo-1623188475375-dcb897bfdb66?w=1900&amp;q=78&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="El Caserito Colombiano" fetchpriority="high"></div>
+</div></div></section>
 
 <section class="sec" id="menu"><div class="w">
   <div class="centro">
-    <span class="rot">Para comer hoy</span>
+    <span class="rot">Nuestro menú</span>
     <h2 class="tit">Lo que sale <em>hoy</em></h2>
     <p class="baja">Todo se prepara al momento. Toca el <b>+</b> para armar tu pedido y mandarlo por WhatsApp.</p>
   </div>
@@ -371,7 +366,7 @@ body.panel-on .chin{bottom:auto;top:90px}
 <script>
 document.documentElement.className += " js";
 (function(){
-const WA="573214596699", MON="$", NEG="El Caserito Colombiano", PLATOS=[{"id": "p0", "n": "Sopa del día", "p": "$16.475", "v": 16475.0, "d": "Cambia cada jornada. Pregunte cuál hay hoy.", "e": "🥣", "img": "https://images.unsplash.com/photo-1607330289024-1535c6b4e1c1?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p1", "n": "Arroz con pollo", "p": "$18.625", "v": 18625.0, "d": "Con su punto de sazón y verduras.", "e": "🍚", "img": "https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p2", "n": "Res mechada", "p": "$23.750", "v": 23750.0, "d": "Deshilachada en su salsa, con arroz y habichuelas.", "e": "🥩", "img": "https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p3", "n": "Almuerzo del día", "p": "$13.725", "v": 13725.0, "d": "Sopa, plato fuerte, arroz, ensalada y jugo natural.", "e": "🍛", "img": "https://images.unsplash.com/photo-1623188475375-dcb897bfdb66?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p4", "n": "Costillas guisadas", "p": "$23.175", "v": 23175.0, "d": "Blanditas, con su salsa espesa para el arroz.", "e": "🍖", "img": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p5", "n": "Jugo natural", "p": "$7.075", "v": 7075.0, "d": "De la fruta que haya ese día, bien frío.", "e": "🥤", "img": "https://images.unsplash.com/photo-1583549323543-7ae855a78d6d?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": "Para compartir"}];
+const WA="573214596699", MON="$", NEG="El Caserito Colombiano", PLATOS=[{"id": "p0", "n": "Sopa del día", "p": "$14.950", "v": 14950.0, "d": "Cambia cada jornada. Pregunte cuál hay hoy.", "e": "🥣", "img": "https://images.unsplash.com/photo-1687419950105-b1cdeb6c66bc?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p1", "n": "Res mechada", "p": "$23.975", "v": 23975.0, "d": "Deshilachada en su salsa, con arroz y habichuelas.", "e": "🥩", "img": "https://images.unsplash.com/photo-1623188475375-dcb897bfdb66?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p2", "n": "Pescado frito", "p": "$26.600", "v": 26600.0, "d": "Entero y crujiente, con tostones y ensalada.", "e": "🐟", "img": "https://images.unsplash.com/photo-1567030492990-950d9855154b?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p3", "n": "Almuerzo del día", "p": "$14.850", "v": 14850.0, "d": "Sopa, plato fuerte, arroz, ensalada y jugo natural.", "e": "🍛", "img": "https://images.unsplash.com/photo-1623188475375-dcb897bfdb66?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": "Para compartir"}, {"id": "p4", "n": "Chivo guisado", "p": "$25.525", "v": 25525.0, "d": "Con su orégano y su tiempo. De los que piden dos veces.", "e": "🍖", "img": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p5", "n": "Sancocho", "p": "$22.850", "v": 22850.0, "d": "Cocido despacio desde temprano, con su yuca y su plátano.", "e": "🍲", "img": "https://images.unsplash.com/photo-1627880872609-f7ddd76616c2?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}];
 const ICO='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>';
 const $=s=>document.querySelector(s);
 document.getElementById("rejilla").innerHTML = PLATOS.map(p => {
@@ -382,11 +377,11 @@ document.getElementById("rejilla").innerHTML = PLATOS.map(p => {
     '<div class="cnt"><button type="button" data-menos="'+p.id+'">&#8722;</button>'+
     '<b data-n="'+p.id+'">0</b><button type="button" data-mas="'+p.id+'">+</button></div></div>';
 
-  return '<article class="tarj" data-id="'+p.id+'">'+
-    '<div class="tarj-img" data-emoji="'+p.e+'">'+(p.s?'<span class="sello">'+p.s+'</span>':'')+
+  return '<article class="tarj'+(p.s?' con-foto':'')+'" data-id="'+p.id+'">'+
+    '<div class="tarj-img" data-emoji="'+p.e+'">'+
       '<img src="'+p.img+'" alt="'+p.n+'" decoding="async"></div>'+
-    '<div class="tarj-tx"><div class="tarj-cab"><h3>'+p.n+'</h3><span class="pz">'+p.p+'</span></div>'+
-    '<p>'+p.d+'</p>'+ACC+'</div></article>';
+    '<div class="tarj-cab"><h3>'+p.n+'</h3><span class="punt"></span><span class="pz">'+p.p+'</span></div>'+
+    '<p>'+p.d+'</p>'+ACC+'</article>';
 
 }).join("");
 (function(){
@@ -530,19 +525,14 @@ if(hi && !window.matchMedia("(prefers-reduced-motion:reduce)").matches){
   });
   h1.innerHTML=""; t.forEach(function(x){ h1.appendChild(x); });
   var P=h1.querySelectorAll(".pal");
-  P.forEach(function(x,i){ setTimeout(function(){ x.classList.add("va"); }, 170+i*90); });
+  P.forEach(function(x,i){ setTimeout(function(){ x.classList.add("va"); }, 170+i*72); });
   setTimeout(function(){ P.forEach(function(x){ x.classList.add("va"); }); }, 2600);
 })();
 
 (function(){ var f=document.querySelector(".hero-img, .portada img, .hero img"); if(!f) return;
   var g=function(){ var y=window.scrollY;
-    if(y<900) f.style.transform="translate3d(0,"+(y*0.22)+"px,0) scale("+(1+y*0.00012)+")"; };
+    if(y<900) f.style.transform="translate3d(0,"+(y*0.1)+"px,0) scale("+(1+y*0.00012)+")"; };
   window.addEventListener("scroll",g,{passive:true}); g(); })();
-
-(function(){ document.querySelectorAll(".tarj").forEach(function(t){
-  t.addEventListener("mousemove",function(e){ var r=t.getBoundingClientRect();
-    t.style.setProperty("--mx",(e.clientX-r.left)+"px");
-    t.style.setProperty("--my",(e.clientY-r.top)+"px"); }); }); })();
 
 (function(){
   var v=document.createElement("div"); v.className="visor";

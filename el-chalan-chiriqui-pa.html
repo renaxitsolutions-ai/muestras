@@ -21,7 +21,7 @@
  --bg:#12100D; --panel:#221F1C; --tinta:#F5F5F4; --tinta2:#CFC8BF; --suave:#988E81;
  --dark:#0C0B08; --a:#D3A15A; --c:#E0E765; --wa:#25D366;
  --linea:rgba(255,255,255,.13); --sobreA:#FFFFFF;
- --disp:"Zilla Slab",Georgia,serif; --sans:"Nunito Sans",system-ui,sans-serif; --pesoD:700; --r:26px; --esc:1.01;
+ --disp:"Zilla Slab",Georgia,serif; --sans:"Nunito Sans",system-ui,sans-serif; --pesoD:700; --r:16px; --esc:1.03;
 }
 *,*::before,*::after{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -63,9 +63,9 @@ p{margin:0}
  display:grid;place-items:center;font-size:1.45rem;font-style:normal}
 .marca b{display:block;font-family:var(--disp);font-size:1.2rem;line-height:1.12;font-weight:var(--pesoD)}
 .marca span{display:block;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);margin-top:4px}
-.sec{padding:114px 0}
+.sec{padding:103px 0}
 .rot{display:inline-flex;align-items:center;gap:12px;font-size:.71rem;font-weight:700;
- letter-spacing:0.21em;text-transform:uppercase;color:var(--a)}
+ letter-spacing:0.23em;text-transform:uppercase;color:var(--a)}
 .rot::before{content:"";width:26px;height:1.5px;background:var(--a)}
 .tit{font-size:clamp(2.1rem,4.8vw,3.5rem);margin:20px 0 0;max-width:17ch;letter-spacing:-.028em}
 .tit em{font-style:normal;color:var(--a)}
@@ -123,7 +123,7 @@ p{margin:0}
 .dato b{display:block;font-size:.67rem;letter-spacing:.15em;text-transform:uppercase;color:var(--suave)}
 .dato span{display:block;font-weight:500;margin-top:3px}
 .dato a{color:var(--a);font-weight:700}
-.cierre{background:var(--dark);color:#fff;text-align:center;padding:calc(114px * 1.05) 0}
+.cierre{background:var(--dark);color:#fff;text-align:center;padding:calc(103px * 1.05) 0}
 .cierre h2{font-size:clamp(2.1rem,5.2vw,3.5rem);max-width:16ch;margin-inline:auto;letter-spacing:-.028em}
 .cierre h2 em{font-style:normal;color:var(--c)}
 .cierre p{margin:20px auto 0;max-width:48ch;opacity:.8}
@@ -187,7 +187,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.6);padding:54px 0 32px;fon
 .chin.on{opacity:1;transform:translate(-50%,0)}
 body.panel-on .chin{bottom:auto;top:90px}
 @media(max-width:1080px){.visita{grid-template-columns:1fr;gap:36px}}
-@media(max-width:600px){.w{width:calc(100% - 32px)}.sec{padding:calc(114px * .72) 0}}
+@media(max-width:600px){.w{width:calc(100% - 32px)}.sec{padding:calc(103px * .72) 0}}
 
 .rejilla{display:flex;gap:16px;margin-top:40px;overflow-x:auto;padding-bottom:18px;
  scroll-snap-type:x mandatory;scrollbar-width:thin;max-width:100%;min-width:0}
@@ -258,12 +258,12 @@ body.panel-on .chin{bottom:auto;top:90px}
   .flota{animation:none}.tarj:hover{transform:none}
 }
 
-.pal{display:inline-block;opacity:0;transform:scale(.82);filter:blur(5px);transition:opacity .7s ease,transform .8s cubic-bezier(.16,1,.3,1),filter .6s ease}.pal.va{opacity:1;transform:none;filter:none}
-.js .rv{opacity:0;transform:translateY(26px) scale(.982);filter:blur(4px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1),filter .55s ease}.js .rv.in{opacity:1;transform:none;filter:none}
+.pal{display:inline-block;opacity:0;transform:translateX(-26px) skewX(-6deg);transition:opacity .6s ease,transform .75s cubic-bezier(.16,1,.3,1)}.pal.va{opacity:1;transform:none}
+.js .rv{opacity:0;transform:translateY(32px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}.js .rv.in{opacity:1;transform:none;filter:none}
 .tarj{position:relative;transition:transform .35s,border-color .35s}.tarj::before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;border:2px solid transparent;transition:border-color .35s}.tarj:hover::before{border-color:var(--a)}.tarj:hover{transform:translateY(-4px)}
 .avance{height:5px;top:0;background:var(--a);box-shadow:0 0 16px var(--a)}
 .flota{box-shadow:0 14px 34px -10px rgba(37,211,102,.65)}.flota:hover{transform:scale(1.1) translateY(-3px)}
-.flota{right:18px;bottom:92px}
+.flota{left:18px;bottom:92px}
 @media(max-width:620px){.flota{bottom:84px}}
 </style>
 </head>
@@ -274,14 +274,14 @@ body.panel-on .chin{bottom:auto;top:90px}
 <section class="w intro">
   <div>
     <span class="pill" style="background:color-mix(in srgb,var(--a) 14%,transparent);border-color:color-mix(in srgb,var(--a) 34%,transparent);color:var(--a)"><i style="background:var(--a)"></i>Comida criolla</span>
-    <h1>Lo que se cocina <em>hoy en la cocina</em></h1>
-    <p>Recetas que no están escritas en ningún lado, porque se aprendieron de pie junto a la olla.</p>
+    <h1>Comida de casa, <em>hecha cada mañana</em></h1>
+    <p>La comida que te sostiene el día, hecha con lo que trajo el mercado esta mañana.</p>
     <div class="intro-cta">
       <a class="btn btn-wa" href="https://wa.me/50761407528?text=%C2%A1Hola%20El%20Chal%C3%A1n%20Chiriqu%C3%AD%21%20Quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>Pedir por WhatsApp</a>
       <a class="btn btn-l" href="#donde">Cómo llegar</a>
     </div>
   </div>
-  <div class="intro-foto"><img src="https://images.unsplash.com/photo-1607330289024-1535c6b4e1c1?w=1900&amp;q=78&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="El Chalán Chiriquí" fetchpriority="high"></div>
+  <div class="intro-foto"><img src="https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=1900&amp;q=78&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="El Chalán Chiriquí" fetchpriority="high"></div>
 </section>
 <div class="franja-d">
   <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Todos los días: 11:00 am – 9:00 pm</div>
@@ -291,8 +291,8 @@ body.panel-on .chin{bottom:auto;top:90px}
 
 <section class="sec" id="menu"><div class="w">
   <div class="centro">
-    <span class="rot">Para comer hoy</span>
-    <h2 class="tit">Lo que sale <em>hoy</em></h2>
+    <span class="rot">Nuestra cocina</span>
+    <h2 class="tit">Lo que <em>servimos</em></h2>
     <p class="baja">Todo se prepara al momento. Toca el <b>+</b> para armar tu pedido y mandarlo por WhatsApp.</p>
   </div>
   <div class="rejilla" id="rejilla"></div>
@@ -323,7 +323,7 @@ body.panel-on .chin{bottom:auto;top:90px}
 
 
 <section class="cierre"><div class="w">
-  <h2>Escríbenos <em>y listo</em></h2>
+  <h2>Te esperamos <em>hoy</em></h2>
   <p>Mándanos lo que quieres por WhatsApp y lo tenemos listo cuando llegues.</p>
   <a class="btn btn-wa" href="https://wa.me/50761407528?text=%C2%A1Hola%20El%20Chal%C3%A1n%20Chiriqu%C3%AD%21%20Quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>Pedir por WhatsApp</a>
 </div></section>
@@ -354,7 +354,7 @@ body.panel-on .chin{bottom:auto;top:90px}
 <script>
 document.documentElement.className += " js";
 (function(){
-const WA="50761407528", MON="$", NEG="El Chalán Chiriquí", PLATOS=[{"id": "p0", "n": "Sancocho", "p": "$9.79", "v": 9.79, "d": "Cocido despacio desde temprano, con su yuca y su plátano.", "e": "🍲", "img": "https://images.unsplash.com/photo-1607330289024-1535c6b4e1c1?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p1", "n": "Chivo guisado", "p": "$12.31", "v": 12.31, "d": "Con su orégano y su tiempo. De los que piden dos veces.", "e": "🍖", "img": "https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p2", "n": "Arroz con pollo", "p": "$8.32", "v": 8.32, "d": "Con su punto de sazón y verduras.", "e": "🍚", "img": "https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p3", "n": "Pescado frito", "p": "$12.12", "v": 12.12, "d": "Entero y crujiente, con tostones y ensalada.", "e": "🐟", "img": "https://images.unsplash.com/photo-1580959375944-abd7e991f971?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p4", "n": "Jugo natural", "p": "$3.27", "v": 3.27, "d": "De la fruta que haya ese día, bien frío.", "e": "🥤", "img": "https://images.unsplash.com/photo-1583549323543-7ae855a78d6d?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p5", "n": "Mofongo", "p": "$8.82", "v": 8.82, "d": "Machacado al momento, con chicharrón y ajo.", "e": "🥔", "img": "https://images.unsplash.com/photo-1623188475375-dcb897bfdb66?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": "Del día"}];
+const WA="50761407528", MON="$", NEG="El Chalán Chiriquí", PLATOS=[{"id": "p0", "n": "Mofongo", "p": "$9.45", "v": 9.45, "d": "Machacado al momento, con chicharrón y ajo.", "e": "🥔", "img": "https://images.unsplash.com/photo-1623188475375-dcb897bfdb66?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p1", "n": "Carne guisada", "p": "$9.18", "v": 9.18, "d": "Cocida lento hasta deshacerse sola, con arroz blanco.", "e": "🥘", "img": "https://images.unsplash.com/photo-1623188475375-dcb897bfdb66?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p2", "n": "Sopa del día", "p": "$7.13", "v": 7.13, "d": "Cambia cada jornada. Pregunte cuál hay hoy.", "e": "🥣", "img": "https://images.unsplash.com/photo-1627880872609-f7ddd76616c2?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p3", "n": "Almuerzo del día", "p": "$5.94", "v": 5.94, "d": "Sopa, plato fuerte, arroz, ensalada y jugo natural.", "e": "🍛", "img": "https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": "Nuestro clásico"}, {"id": "p4", "n": "Arroz con pollo", "p": "$8.99", "v": 8.99, "d": "Con su punto de sazón y verduras.", "e": "🍚", "img": "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p5", "n": "Pescado frito", "p": "$11.04", "v": 11.04, "d": "Entero y crujiente, con tostones y ensalada.", "e": "🐟", "img": "https://images.unsplash.com/photo-1567030492990-950d9855154b?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}];
 const ICO='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>';
 const $=s=>document.querySelector(s);
 document.getElementById("rejilla").innerHTML = PLATOS.map(p => {
@@ -513,13 +513,13 @@ if(hi && !window.matchMedia("(prefers-reduced-motion:reduce)").matches){
   });
   h1.innerHTML=""; t.forEach(function(x){ h1.appendChild(x); });
   var P=h1.querySelectorAll(".pal");
-  P.forEach(function(x,i){ setTimeout(function(){ x.classList.add("va"); }, 170+i*80); });
+  P.forEach(function(x,i){ setTimeout(function(){ x.classList.add("va"); }, 170+i*62); });
   setTimeout(function(){ P.forEach(function(x){ x.classList.add("va"); }); }, 2600);
 })();
 
 (function(){ var f=document.querySelector(".hero-img, .portada img, .hero img"); if(!f) return;
   var g=function(){ var y=window.scrollY;
-    if(y<900) f.style.transform="translate3d(0,"+(y*0.1)+"px,0) scale("+(1+y*0.00012)+")"; };
+    if(y<900) f.style.transform="translate3d(0,"+(y*0.16)+"px,0) scale("+(1+y*0.00012)+")"; };
   window.addEventListener("scroll",g,{passive:true}); g(); })();
 
 (function(){

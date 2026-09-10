@@ -21,7 +21,7 @@
  --bg:#F9F6F1; --panel:#FFFFFF; --tinta:#16140E; --tinta2:#544D3B; --suave:#918973;
  --dark:#383019; --a:#84681F; --c:#97AE2D; --wa:#25D366;
  --linea:rgba(0,0,0,.11); --sobreA:#FFFFFF;
- --disp:"Newsreader",Georgia,serif; --sans:"Jost",system-ui,sans-serif; --pesoD:600; --r:12px; --esc:0.96;
+ --disp:"Newsreader",Georgia,serif; --sans:"Jost",system-ui,sans-serif; --pesoD:600; --r:2px; --esc:1.01;
 }
 *,*::before,*::after{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -63,9 +63,9 @@ p{margin:0}
  display:grid;place-items:center;font-size:1.45rem;font-style:normal}
 .marca b{display:block;font-family:var(--disp);font-size:1.2rem;line-height:1.12;font-weight:var(--pesoD)}
 .marca span{display:block;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);margin-top:4px}
-.sec{padding:118px 0}
+.sec{padding:92px 0}
 .rot{display:inline-flex;align-items:center;gap:12px;font-size:.71rem;font-weight:700;
- letter-spacing:0.16em;text-transform:uppercase;color:var(--a)}
+ letter-spacing:0.24em;text-transform:uppercase;color:var(--a)}
 .rot::before{content:"";width:26px;height:1.5px;background:var(--a)}
 .tit{font-size:clamp(2.1rem,4.8vw,3.5rem);margin:20px 0 0;max-width:17ch;letter-spacing:-.028em}
 .tit em{font-style:normal;color:var(--a)}
@@ -123,7 +123,7 @@ p{margin:0}
 .dato b{display:block;font-size:.67rem;letter-spacing:.15em;text-transform:uppercase;color:var(--suave)}
 .dato span{display:block;font-weight:500;margin-top:3px}
 .dato a{color:var(--a);font-weight:700}
-.cierre{background:var(--dark);color:#fff;text-align:center;padding:calc(118px * 1.05) 0}
+.cierre{background:var(--dark);color:#fff;text-align:center;padding:calc(92px * 1.05) 0}
 .cierre h2{font-size:clamp(2.1rem,5.2vw,3.5rem);max-width:16ch;margin-inline:auto;letter-spacing:-.028em}
 .cierre h2 em{font-style:normal;color:var(--c)}
 .cierre p{margin:20px auto 0;max-width:48ch;opacity:.8}
@@ -187,7 +187,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.6);padding:54px 0 32px;fon
 .chin.on{opacity:1;transform:translate(-50%,0)}
 body.panel-on .chin{bottom:auto;top:90px}
 @media(max-width:1080px){.visita{grid-template-columns:1fr;gap:36px}}
-@media(max-width:600px){.w{width:calc(100% - 32px)}.sec{padding:calc(118px * .72) 0}}
+@media(max-width:600px){.w{width:calc(100% - 32px)}.sec{padding:calc(92px * .72) 0}}
 
 .rejilla{display:flex;gap:16px;margin-top:40px;overflow-x:auto;padding-bottom:18px;
  scroll-snap-type:x mandatory;scrollbar-width:thin;max-width:100%;min-width:0}
@@ -206,27 +206,31 @@ body.panel-on .chin{bottom:auto;top:90px}
 .pista::before{content:"";width:26px;height:2px;background:var(--a)}
 
 
-.port{position:relative;height:min(76vh,640px);overflow:hidden;background:var(--dark);display:flex;align-items:flex-end}
-.port img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;will-change:transform}
-.port::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,
- color-mix(in srgb,var(--dark) 40%,transparent),transparent 45%,color-mix(in srgb,var(--dark) 92%,transparent))}
-.port-tx{position:relative;z-index:2;padding:0 0 52px;color:#fff;width:100%}
-.port-tx .mini{font-family:var(--sans);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--c)}
-.port-tx h1{font-size:clamp(2.4rem,6.4vw,5rem);margin:16px 0 0;max-width:15ch}
-.port-tx h1 em{font-style:normal;color:var(--c)}
-.cap{padding:76px 0;text-align:center}
-.cap .num{font-family:var(--sans);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--a)}
-.cap h2{font-size:clamp(1.9rem,4.4vw,3rem);margin:14px 0 20px}
-.cap h2 em{font-style:normal;color:var(--a)}
-.cap p{color:var(--tinta2);max-width:56ch;margin-inline:auto}
-.duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px}
-.duo figure{margin:0;border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;background:var(--dark);position:relative}
-.duo img{width:100%;height:100%;object-fit:cover}
-.datos-al{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:34px;text-align:center}
-.datos-al svg{width:20px;height:20px;color:var(--a);margin-inline:auto}
-.datos-al b{display:block;font-family:var(--sans);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
- color:var(--suave);margin:9px 0 4px}
-@media(max-width:700px){.duo,.datos-al{grid-template-columns:1fr;gap:14px}.cap{padding:54px 0}}
+.filete{height:5px;background:var(--a)}
+.enc{text-align:center;padding:64px 0 44px}
+.enc .mini{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--suave)}
+.enc h1{font-size:clamp(2.4rem,6vw,4.4rem);margin:22px 0 0}
+.enc h1 em{font-style:normal;color:var(--a)}
+.orna{display:flex;align-items:center;justify-content:center;gap:14px;margin:26px 0}
+.orna::before,.orna::after{content:"";width:56px;height:1px;background:var(--linea)}
+.orna i{width:7px;height:7px;background:var(--a);transform:rotate(45deg);display:block}
+.enc p{max-width:50ch;margin:0 auto;color:var(--tinta2)}
+.enc .cta{margin-top:26px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.foto-ancha{height:min(46vh,380px);overflow:hidden;position:relative;background:var(--dark)}
+.foto-ancha img{width:100%;height:100%;object-fit:cover}
+.tira-datos{border-bottom:1px solid var(--linea);padding:20px 0}
+.tira-datos .w{display:flex;justify-content:center;gap:clamp(22px,6vw,60px);flex-wrap:wrap;text-align:center;font-size:.9rem}
+.tira-datos span{display:inline-flex;align-items:center;gap:9px;color:var(--tinta2)}
+.tira-datos svg{width:16px;height:16px;color:var(--a)}
+/* el menú de esta forma va en lista, no en rejilla */
+.rejilla{display:grid;grid-template-columns:1fr;gap:0;max-width:760px;margin-inline:auto}
+.tarj{flex-direction:row;align-items:stretch;border:0;border-bottom:1px solid var(--linea);border-radius:0;background:transparent}
+.tarj:hover{transform:none;border-color:var(--linea)}
+.tarj-img{width:132px;flex:0 0 auto;aspect-ratio:1;border-radius:14px;margin:16px 0 16px 0}
+.tarj-tx{padding:18px 0 18px 20px}
+.tarj h3{font-size:1.24rem}
+.acc{margin-top:8px}
+@media(max-width:600px){.tarj-img{width:96px}.tarj-tx{padding-left:14px}}
 
 
 /* ═══ el visor de fotos ═══ */
@@ -267,12 +271,12 @@ body.panel-on .chin{bottom:auto;top:90px}
   .flota{animation:none}.tarj:hover{transform:none}
 }
 
-.pal{display:inline-block;opacity:0;transform:translateY(100%);transition:opacity .55s ease,transform .8s cubic-bezier(.16,1,.3,1)}.pal.va{opacity:1;transform:none}h1{overflow:hidden}
-.js .rv{opacity:0;transform:translateY(-18px) rotate(-.6deg);transition:opacity .7s ease,transform .8s cubic-bezier(.34,1.4,.64,1)}.js .rv.in{opacity:1;transform:none;filter:none}
+.pal{display:inline-block;opacity:0;transform:translateX(-26px) skewX(-6deg);transition:opacity .6s ease,transform .75s cubic-bezier(.16,1,.3,1)}.pal.va{opacity:1;transform:none}
+.js .rv{opacity:0;transform:translateY(32px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}.js .rv.in{opacity:1;transform:none;filter:none}
 .tarj{transition:transform .4s cubic-bezier(.16,1,.3,1),border-color .3s}.tarj .tarj-img img{transition:transform .8s cubic-bezier(.16,1,.3,1),opacity .5s}.tarj:hover .tarj-img img{transform:scale(1.1)}.tarj:hover{transform:translateY(-5px)}
-.avance{height:3px;top:0;background:linear-gradient(90deg,var(--a),var(--c));box-shadow:0 0 12px var(--a)}
+.avance{height:5px;top:0;background:var(--a);box-shadow:0 0 16px var(--a)}
 @keyframes subeba{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}.flota{animation:subeba 3s ease-in-out infinite}.flota:hover{transform:scale(1.1)}
-.flota{left:18px;bottom:92px}
+.flota{right:18px;bottom:92px}
 @media(max-width:620px){.flota{bottom:84px}}
 </style>
 </head>
@@ -280,36 +284,26 @@ body.panel-on .chin{bottom:auto;top:90px}
 <div class="aviso">Propuesta de diseño para <b>La Pica del Pobre</b> — muestra de cómo quedaría su página.</div>
 <main id="inicio">
 
-<header class="port">
-  <img src="https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=1900&amp;q=78&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="La Pica del Pobre" fetchpriority="high">
-  <div class="w port-tx">
-    <p class="mini">Comida criolla · Santiago</p>
-    <h1>Como la <em>de tu casa</em></h1>
-    <div style="margin-top:26px;display:flex;gap:12px;flex-wrap:wrap">
-      <a class="btn btn-wa" href="https://wa.me/56226730554?text=%C2%A1Hola%20La%20Pica%20del%20Pobre%21%20Quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>Pedir por WhatsApp</a>
-      <a class="btn btn-l" style="color:#fff;border-color:rgba(255,255,255,.32)" href="#menu">Ver el menú</a>
-    </div>
+<div class="filete"></div>
+<header class="enc"><div class="w">
+  <p class="mini">Comida criolla · Santiago</p>
+  <h1>Lo que se cocina<br><em>hoy en la cocina</em></h1>
+  <div class="orna" aria-hidden="true"><i></i></div>
+  <p>La comida que te sostiene el día, hecha con lo que trajo el mercado esta mañana.</p>
+  <div class="cta">
+    <a class="btn btn-wa" href="https://wa.me/56226730554?text=%C2%A1Hola%20La%20Pica%20del%20Pobre%21%20Quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>Pedir por WhatsApp</a>
+    <a class="btn btn-l" href="#menu">Ver la carta</a>
   </div>
-</header>
-<section class="cap"><div class="w">
-  <p class="num">I · La casa</p>
-  <h2>Como la <em>de tu casa</em></h2>
-  <p>Se cocina desde temprano y se sirve mientras dure. Cuando se acaba, se acabó.</p>
-  <div class="duo">
-    <figure><img src="https://images.unsplash.com/photo-1606626135925-0cd311a3624e?w=900&amp;q=74&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="" loading="lazy"></figure>
-    <figure><img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=900&amp;q=74&amp;fm=jpg&amp;fit=crop&amp;auto=format&amp;crop=entropy" alt="" loading="lazy"></figure>
-  </div>
-  <div class="datos-al">
-    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><b>Horario</b><span>Todos los días: 11:00 am – 9:00 pm</span></div>
-    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><b>Dónde</b><span>Santiago</span></div>
-    <div><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg><b>WhatsApp</b><span>+56226730554</span></div>
-  </div>
-</div></section>
+</div></header>
+<div class="foto-ancha"><img src="https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=1900&amp;q=78&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="La Pica del Pobre" fetchpriority="high"></div>
+<div class="tira-datos"><div class="w">
+  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Todos los días: 11:00 am – 9:00 pm</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Santiago</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H8l-4 4z"/></svg>Pedidos por WhatsApp</span>
+</div></div>
 
 <section class="sec" id="menu"><div class="w">
   <div class="centro">
-    <span class="rot">Nuestro menú</span>
-    <h2 class="tit">Nuestros <em>platos</em></h2>
+    <span class="rot">Lo que servimos</span>
+    <h2 class="tit">Lo que <em>servimos</em></h2>
     <p class="baja">Todo se prepara al momento. Toca el <b>+</b> para armar tu pedido y mandarlo por WhatsApp.</p>
   </div>
   <div class="rejilla" id="rejilla"></div>
@@ -340,7 +334,7 @@ body.panel-on .chin{bottom:auto;top:90px}
 
 
 <section class="cierre"><div class="w">
-  <h2>Pide y <em>pasa recogiendo</em></h2>
+  <h2>Haz tu pedido <em>ahora</em></h2>
   <p>Mándanos lo que quieres por WhatsApp y lo tenemos listo cuando llegues.</p>
   <a class="btn btn-wa" href="https://wa.me/56226730554?text=%C2%A1Hola%20La%20Pica%20del%20Pobre%21%20Quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>Pedir por WhatsApp</a>
 </div></section>
@@ -371,7 +365,7 @@ body.panel-on .chin{bottom:auto;top:90px}
 <script>
 document.documentElement.className += " js";
 (function(){
-const WA="56226730554", MON="$", NEG="La Pica del Pobre", PLATOS=[{"id": "p0", "n": "Almuerzo del día", "p": "$6.100", "v": 6100.0, "d": "Sopa, plato fuerte, arroz, ensalada y jugo natural.", "e": "🍛", "img": "https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p1", "n": "Sancocho", "p": "$9.975", "v": 9975.0, "d": "Cocido despacio desde temprano, con su yuca y su plátano.", "e": "🍲", "img": "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p2", "n": "Carne guisada", "p": "$9.175", "v": 9175.0, "d": "Cocida lento hasta deshacerse sola, con arroz blanco.", "e": "🥘", "img": "https://images.unsplash.com/photo-1623188475375-dcb897bfdb66?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p3", "n": "Jugo natural", "p": "$3.050", "v": 3050.0, "d": "De la fruta que haya ese día, bien frío.", "e": "🥤", "img": "https://images.unsplash.com/photo-1583549323543-7ae855a78d6d?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p4", "n": "Pollo guisado", "p": "$8.100", "v": 8100.0, "d": "El de todos los días, el que nunca falla.", "e": "🍗", "img": "https://images.unsplash.com/photo-1606626135925-0cd311a3624e?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p5", "n": "Sopa del día", "p": "$6.925", "v": 6925.0, "d": "Cambia cada jornada. Pregunte cuál hay hoy.", "e": "🥣", "img": "https://images.unsplash.com/photo-1607330289024-1535c6b4e1c1?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": "Nuestro clásico"}];
+const WA="56226730554", MON="$", NEG="La Pica del Pobre", PLATOS=[{"id": "p0", "n": "Jugo natural", "p": "$3.325", "v": 3325.0, "d": "De la fruta que haya ese día, bien frío.", "e": "🥤", "img": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p1", "n": "Sancocho", "p": "$9.775", "v": 9775.0, "d": "Cocido despacio desde temprano, con su yuca y su plátano.", "e": "🍲", "img": "https://images.unsplash.com/photo-1665593998976-d957f2827fe7?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p2", "n": "Pollo guisado", "p": "$8.100", "v": 8100.0, "d": "El de todos los días, el que nunca falla.", "e": "🍗", "img": "https://images.unsplash.com/photo-1606626135925-0cd311a3624e?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p3", "n": "Sopa del día", "p": "$6.725", "v": 6725.0, "d": "Cambia cada jornada. Pregunte cuál hay hoy.", "e": "🥣", "img": "https://images.unsplash.com/photo-1665593998976-d957f2827fe7?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p4", "n": "Chivo guisado", "p": "$11.600", "v": 11600.0, "d": "Con su orégano y su tiempo. De los que piden dos veces.", "e": "🍖", "img": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p5", "n": "Res mechada", "p": "$9.975", "v": 9975.0, "d": "Deshilachada en su salsa, con arroz y habichuelas.", "e": "🥩", "img": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": "Del día"}];
 const ICO='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>';
 const $=s=>document.querySelector(s);
 document.getElementById("rejilla").innerHTML = PLATOS.map(p => {
@@ -530,14 +524,9 @@ if(hi && !window.matchMedia("(prefers-reduced-motion:reduce)").matches){
   });
   h1.innerHTML=""; t.forEach(function(x){ h1.appendChild(x); });
   var P=h1.querySelectorAll(".pal");
-  P.forEach(function(x,i){ setTimeout(function(){ x.classList.add("va"); }, 170+i*90); });
+  P.forEach(function(x,i){ setTimeout(function(){ x.classList.add("va"); }, 170+i*62); });
   setTimeout(function(){ P.forEach(function(x){ x.classList.add("va"); }); }, 2600);
 })();
-
-(function(){ var f=document.querySelector(".hero-img, .portada img, .hero img"); if(!f) return;
-  var g=function(){ var y=window.scrollY;
-    if(y<900) f.style.transform="translate3d(0,"+(y*0.1)+"px,0) scale("+(1+y*0.00012)+")"; };
-  window.addEventListener("scroll",g,{passive:true}); g(); })();
 
 (function(){
   var v=document.createElement("div"); v.className="visor";

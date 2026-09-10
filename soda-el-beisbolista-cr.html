@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- Muestra sin vender: que no salga en Google, para no confundir las
+     busquedas del negocio real. Quitalo el dia que el cliente pague. -->
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#3C211A">
 <title>Soda El Beisbolista | San José</title>
@@ -19,7 +21,7 @@
  --bg:#F7F3F2; --panel:#FFFFFF; --tinta:#160F0E; --tinta2:#4D403D; --suave:#89726C;
  --dark:#3C211A; --a:#9C412B; --c:#23C796; --wa:#25D366;
  --linea:rgba(0,0,0,.11); --sobreA:#FFFFFF;
- --disp:"Zilla Slab",Georgia,serif; --sans:"Nunito Sans",system-ui,sans-serif; --pesoD:700; --r:26px; --esc:0.99;
+ --disp:"Zilla Slab",Georgia,serif; --sans:"Nunito Sans",system-ui,sans-serif; --pesoD:700; --r:0px; --esc:1.01;
 }
 *,*::before,*::after{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -61,9 +63,9 @@ p{margin:0}
  display:grid;place-items:center;font-size:1.45rem;font-style:normal}
 .marca b{display:block;font-family:var(--disp);font-size:1.2rem;line-height:1.12;font-weight:var(--pesoD)}
 .marca span{display:block;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);margin-top:4px}
-.sec{padding:89px 0}
+.sec{padding:95px 0}
 .rot{display:inline-flex;align-items:center;gap:12px;font-size:.71rem;font-weight:700;
- letter-spacing:0.17em;text-transform:uppercase;color:var(--a)}
+ letter-spacing:0.23em;text-transform:uppercase;color:var(--a)}
 .rot::before{content:"";width:26px;height:1.5px;background:var(--a)}
 .tit{font-size:clamp(2.1rem,4.8vw,3.5rem);margin:20px 0 0;max-width:17ch;letter-spacing:-.028em}
 .tit em{font-style:normal;color:var(--a)}
@@ -121,7 +123,7 @@ p{margin:0}
 .dato b{display:block;font-size:.67rem;letter-spacing:.15em;text-transform:uppercase;color:var(--suave)}
 .dato span{display:block;font-weight:500;margin-top:3px}
 .dato a{color:var(--a);font-weight:700}
-.cierre{background:var(--dark);color:#fff;text-align:center;padding:calc(89px * 1.05) 0}
+.cierre{background:var(--dark);color:#fff;text-align:center;padding:calc(95px * 1.05) 0}
 .cierre h2{font-size:clamp(2.1rem,5.2vw,3.5rem);max-width:16ch;margin-inline:auto;letter-spacing:-.028em}
 .cierre h2 em{font-style:normal;color:var(--c)}
 .cierre p{margin:20px auto 0;max-width:48ch;opacity:.8}
@@ -185,24 +187,22 @@ footer{background:var(--dark);color:rgba(255,255,255,.6);padding:54px 0 32px;fon
 .chin.on{opacity:1;transform:translate(-50%,0)}
 body.panel-on .chin{bottom:auto;top:90px}
 @media(max-width:1080px){.visita{grid-template-columns:1fr;gap:36px}}
-@media(max-width:600px){.w{width:calc(100% - 32px)}.sec{padding:calc(89px * .72) 0}}
+@media(max-width:600px){.w{width:calc(100% - 32px)}.sec{padding:calc(95px * .72) 0}}
 
-.rejilla{display:grid;grid-template-columns:1fr;gap:0;max-width:820px;margin:38px auto 0}
-.tarj{display:flex;gap:20px;align-items:stretch;background:transparent;border:0;
- border-bottom:1px solid var(--linea);border-radius:0;padding:20px 0;transition:opacity .3s}
-.tarj:last-child{border-bottom:0}
-.tarj-img{width:150px;height:150px;flex:0 0 auto;border-radius:14px;overflow:hidden;position:relative;
- background:color-mix(in srgb,var(--tinta) 8%,var(--panel))}
-.tarj-tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:8px;padding:4px 0}
-.tarj-cab{display:flex;justify-content:space-between;align-items:baseline;gap:16px;min-width:0;flex-wrap:wrap}
-.tarj h3{font-size:1.3rem}
-.tarj .pz{font-family:var(--disp);font-size:1.5rem;color:var(--a);white-space:nowrap}
-.tarj p{flex:1}
-@media(max-width:600px){
- .tarj-img{width:88px;height:88px}.tarj{gap:13px}
- .tarj h3{font-size:1.08rem}
- .tarj .pz{font-size:1.16rem}
-}
+.rejilla{display:grid;grid-template-columns:1fr 1fr;gap:6px 52px;margin-top:40px}
+.tarj{background:transparent;border:0;border-bottom:1px dashed color-mix(in srgb,var(--tinta) 26%,transparent);
+ border-radius:0;padding:18px 0;display:block}
+.tarj:hover{transform:none}
+.tarj-img{display:none}
+.tarj.con-foto .tarj-img{display:block;float:left;width:86px;height:86px;border-radius:12px;overflow:hidden;
+ position:relative;margin:0 16px 8px 0;background:color-mix(in srgb,var(--tinta) 8%,var(--panel))}
+.tarj-cab{display:flex;align-items:baseline;gap:12px}
+.tarj h3{font-size:1.18rem;flex:0 0 auto;max-width:70%}
+.punt{flex:1;border-bottom:1.5px dotted color-mix(in srgb,var(--tinta) 30%,transparent);transform:translateY(-4px)}
+.tarj .pz{font-family:var(--disp);font-size:1.26rem;color:var(--a);white-space:nowrap}
+.tarj p{margin-top:6px;font-size:.88rem}
+.tarj .acc{margin-top:12px;clear:both}
+@media(max-width:900px){.rejilla{grid-template-columns:1fr;gap:0}}
 
 
 .hero{position:relative;min-height:min(86vh,720px);display:flex;align-items:center;overflow:hidden;background:var(--dark)}
@@ -270,10 +270,10 @@ body.panel-on .chin{bottom:auto;top:90px}
   .flota{animation:none}.tarj:hover{transform:none}
 }
 
-.pal{display:inline-block;opacity:0;transform:translateX(-26px) skewX(-6deg);transition:opacity .6s ease,transform .75s cubic-bezier(.16,1,.3,1)}.pal.va{opacity:1;transform:none}
-.js .rv{opacity:0;transform:translateY(32px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}.js .rv.in{opacity:1;transform:none;filter:none}
-.tarj{position:relative;transition:transform .35s,border-color .35s}.tarj::before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;border:2px solid transparent;transition:border-color .35s}.tarj:hover::before{border-color:var(--a)}.tarj:hover{transform:translateY(-4px)}
-.avance{height:3px;bottom:0;top:auto;background:linear-gradient(90deg,var(--c),var(--a))}
+.pal{display:inline-block;opacity:0;transform:translateY(100%);transition:opacity .55s ease,transform .8s cubic-bezier(.16,1,.3,1)}.pal.va{opacity:1;transform:none}h1{overflow:hidden}
+.js .rv{opacity:0;transform:translateX(-30px);transition:opacity .75s ease,transform .8s cubic-bezier(.16,1,.3,1)}.js .rv.d1{transform:translateX(30px)}.js .rv.in{opacity:1;transform:none;filter:none}
+.tarj{position:relative;overflow:hidden;transition:transform .38s cubic-bezier(.16,1,.3,1),border-color .3s}.tarj::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.10),transparent 42%);transition:opacity .35s}.tarj:hover::after{opacity:1}.tarj:hover{transform:translateY(-6px)}
+.avance{height:5px;top:0;background:var(--a);box-shadow:0 0 16px var(--a)}
 .flota{box-shadow:0 14px 34px -10px rgba(37,211,102,.65)}.flota:hover{transform:scale(1.1) translateY(-3px)}
 .flota{right:18px;bottom:92px}
 @media(max-width:620px){.flota{bottom:84px}}
@@ -287,8 +287,8 @@ body.panel-on .chin{bottom:auto;top:90px}
   <div class="hero-bg"><img src="https://images.unsplash.com/photo-1623188475375-dcb897bfdb66?w=1900&amp;q=78&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="Soda El Beisbolista" fetchpriority="high"></div>
   <div class="w hero-in">
     <span class="pill"><i></i>Comida criolla en San José</span>
-    <h1>Aquí no hay <em>comida de ayer</em></h1>
-    <p>Recetas que no están escritas en ningún lado, porque se aprendieron de pie junto a la olla.</p>
+    <h1>Se cocina temprano, <em>se sirve caliente</em></h1>
+    <p>Cocina de todos los días, con las recetas de siempre. Pide por WhatsApp y recoge sin hacer cola.</p>
     <div class="hero-cta">
       <a class="btn btn-wa" href="https://wa.me/50686692799?text=%C2%A1Hola%20Soda%20El%20Beisbolista%21%20Quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>Pedir por WhatsApp</a>
       <a class="btn btn-l" style="color:#fff;border-color:rgba(255,255,255,.32)" href="#menu">Ver el menú</a>
@@ -307,8 +307,8 @@ body.panel-on .chin{bottom:auto;top:90px}
 
 <section class="sec" id="menu"><div class="w">
   <div class="centro">
-    <span class="rot">Nuestro menú</span>
-    <h2 class="tit">De nuestra <em>cocina</em></h2>
+    <span class="rot">Para comer hoy</span>
+    <h2 class="tit">Lo que sale <em>hoy</em></h2>
     <p class="baja">Todo se prepara al momento. Toca el <b>+</b> para armar tu pedido y mandarlo por WhatsApp.</p>
   </div>
   <div class="rejilla" id="rejilla"></div>
@@ -339,7 +339,7 @@ body.panel-on .chin{bottom:auto;top:90px}
 
 
 <section class="cierre"><div class="w">
-  <h2>Tu pedido, <em>en un mensaje</em></h2>
+  <h2>Escríbenos <em>y listo</em></h2>
   <p>Mándanos lo que quieres por WhatsApp y lo tenemos listo cuando llegues.</p>
   <a class="btn btn-wa" href="https://wa.me/50686692799?text=%C2%A1Hola%20Soda%20El%20Beisbolista%21%20Quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>Pedir por WhatsApp</a>
 </div></section>
@@ -370,7 +370,7 @@ body.panel-on .chin{bottom:auto;top:90px}
 <script>
 document.documentElement.className += " js";
 (function(){
-const WA="50686692799", MON="₡", NEG="Soda El Beisbolista", PLATOS=[{"id": "p0", "n": "Mofongo", "p": "₡5.350", "v": 5350.0, "d": "Machacado al momento, con chicharrón y ajo.", "e": "🥔", "img": "https://images.unsplash.com/photo-1623188475375-dcb897bfdb66?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p1", "n": "Chivo guisado", "p": "₡6.575", "v": 6575.0, "d": "Con su orégano y su tiempo. De los que piden dos veces.", "e": "🍖", "img": "https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p2", "n": "Sopa del día", "p": "₡4.225", "v": 4225.0, "d": "Cambia cada jornada. Pregunte cuál hay hoy.", "e": "🥣", "img": "https://images.unsplash.com/photo-1607330289024-1535c6b4e1c1?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": "Del día"}, {"id": "p3", "n": "Pollo guisado", "p": "₡5.000", "v": 5000.0, "d": "El de todos los días, el que nunca falla.", "e": "🍗", "img": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p4", "n": "Jugo natural", "p": "₡1.875", "v": 1875.0, "d": "De la fruta que haya ese día, bien frío.", "e": "🥤", "img": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p5", "n": "Res mechada", "p": "₡5.550", "v": 5550.0, "d": "Deshilachada en su salsa, con arroz y habichuelas.", "e": "🥩", "img": "https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}];
+const WA="50686692799", MON="₡", NEG="Soda El Beisbolista", PLATOS=[{"id": "p0", "n": "Costillas guisadas", "p": "₡6.500", "v": 6500.0, "d": "Blanditas, con su salsa espesa para el arroz.", "e": "🍖", "img": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p1", "n": "Sopa del día", "p": "₡3.925", "v": 3925.0, "d": "Cambia cada jornada. Pregunte cuál hay hoy.", "e": "🥣", "img": "https://images.unsplash.com/photo-1665593998976-d957f2827fe7?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": "Recomendado"}, {"id": "p2", "n": "Sancocho", "p": "₡6.100", "v": 6100.0, "d": "Cocido despacio desde temprano, con su yuca y su plátano.", "e": "🍲", "img": "https://images.unsplash.com/photo-1665593998976-d957f2827fe7?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p3", "n": "Almuerzo del día", "p": "₡3.400", "v": 3400.0, "d": "Sopa, plato fuerte, arroz, ensalada y jugo natural.", "e": "🍛", "img": "https://images.unsplash.com/photo-1623188475375-dcb897bfdb66?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p4", "n": "Jugo natural", "p": "₡1.925", "v": 1925.0, "d": "De la fruta que haya ese día, bien frío.", "e": "🥤", "img": "https://images.unsplash.com/photo-1583549323543-7ae855a78d6d?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p5", "n": "Chivo guisado", "p": "₡7.125", "v": 7125.0, "d": "Con su orégano y su tiempo. De los que piden dos veces.", "e": "🍖", "img": "https://images.unsplash.com/photo-1623188475375-dcb897bfdb66?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}];
 const ICO='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>';
 const $=s=>document.querySelector(s);
 document.getElementById("rejilla").innerHTML = PLATOS.map(p => {
@@ -381,11 +381,11 @@ document.getElementById("rejilla").innerHTML = PLATOS.map(p => {
     '<div class="cnt"><button type="button" data-menos="'+p.id+'">&#8722;</button>'+
     '<b data-n="'+p.id+'">0</b><button type="button" data-mas="'+p.id+'">+</button></div></div>';
 
-  return '<article class="tarj" data-id="'+p.id+'">'+
-    '<div class="tarj-img" data-emoji="'+p.e+'">'+(p.s?'<span class="sello">'+p.s+'</span>':'')+
+  return '<article class="tarj'+(p.s?' con-foto':'')+'" data-id="'+p.id+'">'+
+    '<div class="tarj-img" data-emoji="'+p.e+'">'+
       '<img src="'+p.img+'" alt="'+p.n+'" decoding="async"></div>'+
-    '<div class="tarj-tx"><div class="tarj-cab"><h3>'+p.n+'</h3><span class="pz">'+p.p+'</span></div>'+
-    '<p>'+p.d+'</p>'+ACC+'</div></article>';
+    '<div class="tarj-cab"><h3>'+p.n+'</h3><span class="punt"></span><span class="pz">'+p.p+'</span></div>'+
+    '<p>'+p.d+'</p>'+ACC+'</article>';
 
 }).join("");
 (function(){
@@ -529,14 +529,19 @@ if(hi && !window.matchMedia("(prefers-reduced-motion:reduce)").matches){
   });
   h1.innerHTML=""; t.forEach(function(x){ h1.appendChild(x); });
   var P=h1.querySelectorAll(".pal");
-  P.forEach(function(x,i){ setTimeout(function(){ x.classList.add("va"); }, 170+i*62); });
+  P.forEach(function(x,i){ setTimeout(function(){ x.classList.add("va"); }, 170+i*90); });
   setTimeout(function(){ P.forEach(function(x){ x.classList.add("va"); }); }, 2600);
 })();
 
 (function(){ var f=document.querySelector(".hero-img, .portada img, .hero img"); if(!f) return;
   var g=function(){ var y=window.scrollY;
-    if(y<900) f.style.transform="translate3d(0,"+(y*0.1)+"px,0) scale("+(1+y*0.00012)+")"; };
+    if(y<900) f.style.transform="translate3d(0,"+(y*0.22)+"px,0) scale("+(1+y*0.00012)+")"; };
   window.addEventListener("scroll",g,{passive:true}); g(); })();
+
+(function(){ document.querySelectorAll(".tarj").forEach(function(t){
+  t.addEventListener("mousemove",function(e){ var r=t.getBoundingClientRect();
+    t.style.setProperty("--mx",(e.clientX-r.left)+"px");
+    t.style.setProperty("--my",(e.clientY-r.top)+"px"); }); }); })();
 
 (function(){
   var v=document.createElement("div"); v.className="visor";

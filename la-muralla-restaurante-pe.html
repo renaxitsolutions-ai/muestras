@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- Muestra sin vender: que no salga en Google, para no confundir las
+     busquedas del negocio real. Quitalo el dia que el cliente pague. -->
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#110F0D">
 <title>La Muralla Restaurante | Lima</title>
@@ -19,7 +21,7 @@
  --bg:#141210; --panel:#25211D; --tinta:#F6F5F4; --tinta2:#CBC5BD; --suave:#A2978B;
  --dark:#110F0D; --a:#E7AC6A; --c:#598CE3; --wa:#25D366;
  --linea:rgba(255,255,255,.13); --sobreA:#12100E;
- --disp:"DM Serif Display",Georgia,serif; --sans:"Manrope",system-ui,sans-serif; --pesoD:400; --r:8px; --esc:1.06;
+ --disp:"DM Serif Display",Georgia,serif; --sans:"Manrope",system-ui,sans-serif; --pesoD:400; --r:2px; --esc:1.02;
 }
 *,*::before,*::after{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -61,7 +63,7 @@ p{margin:0}
  display:grid;place-items:center;font-size:1.45rem;font-style:normal}
 .marca b{display:block;font-family:var(--disp);font-size:1.2rem;line-height:1.12;font-weight:var(--pesoD)}
 .marca span{display:block;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--suave);margin-top:4px}
-.sec{padding:115px 0}
+.sec{padding:97px 0}
 .rot{display:inline-flex;align-items:center;gap:12px;font-size:.71rem;font-weight:700;
  letter-spacing:0.21em;text-transform:uppercase;color:var(--a)}
 .rot::before{content:"";width:26px;height:1.5px;background:var(--a)}
@@ -121,7 +123,7 @@ p{margin:0}
 .dato b{display:block;font-size:.67rem;letter-spacing:.15em;text-transform:uppercase;color:var(--suave)}
 .dato span{display:block;font-weight:500;margin-top:3px}
 .dato a{color:var(--a);font-weight:700}
-.cierre{background:var(--dark);color:#fff;text-align:center;padding:calc(115px * 1.05) 0}
+.cierre{background:var(--dark);color:#fff;text-align:center;padding:calc(97px * 1.05) 0}
 .cierre h2{font-size:clamp(2.1rem,5.2vw,3.5rem);max-width:16ch;margin-inline:auto;letter-spacing:-.028em}
 .cierre h2 em{font-style:normal;color:var(--c)}
 .cierre p{margin:20px auto 0;max-width:48ch;opacity:.8}
@@ -185,44 +187,50 @@ footer{background:var(--dark);color:rgba(255,255,255,.6);padding:54px 0 32px;fon
 .chin.on{opacity:1;transform:translate(-50%,0)}
 body.panel-on .chin{bottom:auto;top:90px}
 @media(max-width:1080px){.visita{grid-template-columns:1fr;gap:36px}}
-@media(max-width:600px){.w{width:calc(100% - 32px)}.sec{padding:calc(115px * .72) 0}}
+@media(max-width:600px){.w{width:calc(100% - 32px)}.sec{padding:calc(97px * .72) 0}}
 
-.rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-top:42px}
-.tarj{background:var(--panel);border:1px solid var(--linea);border-radius:var(--r);overflow:hidden;
- display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .3s}
-.tarj:hover{transform:translateY(-6px);border-color:var(--a)}
-.tarj-img{aspect-ratio:16/11;overflow:hidden;position:relative;background:color-mix(in srgb,var(--tinta) 8%,var(--panel))}
-.tarj-tx{padding:20px 22px 22px;display:flex;flex-direction:column;gap:9px;flex:1}
-.tarj-cab{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
-.tarj h3{font-size:1.2rem}
-.tarj .pz{font-family:var(--disp);font-size:1.4rem;color:var(--a);white-space:nowrap}
+.rejilla{display:flex;gap:16px;margin-top:40px;overflow-x:auto;padding-bottom:18px;
+ scroll-snap-type:x mandatory;scrollbar-width:thin;max-width:100%;min-width:0}
+.rejilla::-webkit-scrollbar{height:8px}
+.rejilla::-webkit-scrollbar-thumb{background:color-mix(in srgb,var(--tinta) 22%,transparent);border-radius:100px}
+.tarj{flex:0 0 clamp(250px,72vw,310px);scroll-snap-align:start;background:var(--panel);
+ border:1px solid var(--linea);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;
+ transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .3s}
+.tarj:hover{transform:translateY(-5px);border-color:var(--a)}
+.tarj-img{aspect-ratio:1;overflow:hidden;position:relative;background:color-mix(in srgb,var(--tinta) 8%,var(--panel))}
+.tarj-tx{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.tarj-cab{display:flex;flex-direction:column;gap:3px}
+.tarj h3{font-size:1.14rem}
+.tarj .pz{font-family:var(--disp);font-size:1.5rem;color:var(--a)}
+.pista{display:flex;align-items:center;gap:9px;margin-top:14px;font-size:.82rem;color:var(--suave)}
+.pista::before{content:"";width:26px;height:2px;background:var(--a)}
 
 
-.cinta-av{background:var(--c);color:#1A1206;text-align:center;padding:11px 16px;font-size:.9rem;font-weight:800}
-.cab-m{padding:26px 0 6px}
-.cab-m .w{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-.abierto-m{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--linea);border-radius:100px;
- padding:9px 17px;font-size:.85rem;color:var(--tinta2)}
-.abierto-m i{width:8px;height:8px;border-radius:50%;background:#2FA84F;display:block;
- box-shadow:0 0 0 4px rgba(47,168,79,.2)}
-.destacado{padding:24px 0 44px}
-.dest-caja{background:var(--dark);color:#fff;border-radius:var(--r);overflow:hidden;
- display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
-.dest-foto{position:relative;min-height:300px}
-.dest-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.dest-tx{padding:clamp(28px,4.4vw,50px);display:flex;flex-direction:column;justify-content:center}
-.dest-tx h1{font-size:clamp(2rem,4.6vw,3.4rem)}
-.dest-tx h1 em{font-style:normal;color:var(--c)}
-.dest-tx p{margin-top:14px;color:rgba(255,255,255,.82);max-width:40ch}
-.dest-tx .cta{margin-top:26px;display:flex;gap:11px;flex-wrap:wrap}
-.dest-datos{display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:26px;padding-top:20px;
- border-top:1px solid rgba(255,255,255,.2);font-size:.88rem;color:rgba(255,255,255,.8)}
-.dest-datos span{display:inline-flex;align-items:center;gap:8px}
-.dest-datos svg{width:15px;height:15px;color:var(--c)}
-/* precios más grandes en esta forma */
-.tarj .pz{font-size:1.9rem}
-.tarj-cab{flex-direction:column;align-items:flex-start;gap:2px}
-@media(max-width:900px){.dest-caja{grid-template-columns:1fr}.dest-foto{min-height:220px}}
+.filete{height:5px;background:var(--a)}
+.enc{text-align:center;padding:64px 0 44px}
+.enc .mini{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--suave)}
+.enc h1{font-size:clamp(2.4rem,6vw,4.4rem);margin:22px 0 0}
+.enc h1 em{font-style:normal;color:var(--a)}
+.orna{display:flex;align-items:center;justify-content:center;gap:14px;margin:26px 0}
+.orna::before,.orna::after{content:"";width:56px;height:1px;background:var(--linea)}
+.orna i{width:7px;height:7px;background:var(--a);transform:rotate(45deg);display:block}
+.enc p{max-width:50ch;margin:0 auto;color:var(--tinta2)}
+.enc .cta{margin-top:26px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.foto-ancha{height:min(46vh,380px);overflow:hidden;position:relative;background:var(--dark)}
+.foto-ancha img{width:100%;height:100%;object-fit:cover}
+.tira-datos{border-bottom:1px solid var(--linea);padding:20px 0}
+.tira-datos .w{display:flex;justify-content:center;gap:clamp(22px,6vw,60px);flex-wrap:wrap;text-align:center;font-size:.9rem}
+.tira-datos span{display:inline-flex;align-items:center;gap:9px;color:var(--tinta2)}
+.tira-datos svg{width:16px;height:16px;color:var(--a)}
+/* el menú de esta forma va en lista, no en rejilla */
+.rejilla{display:grid;grid-template-columns:1fr;gap:0;max-width:760px;margin-inline:auto}
+.tarj{flex-direction:row;align-items:stretch;border:0;border-bottom:1px solid var(--linea);border-radius:0;background:transparent}
+.tarj:hover{transform:none;border-color:var(--linea)}
+.tarj-img{width:132px;flex:0 0 auto;aspect-ratio:1;border-radius:14px;margin:16px 0 16px 0}
+.tarj-tx{padding:18px 0 18px 20px}
+.tarj h3{font-size:1.24rem}
+.acc{margin-top:8px}
+@media(max-width:600px){.tarj-img{width:96px}.tarj-tx{padding-left:14px}}
 
 
 /* ═══ el visor de fotos ═══ */
@@ -264,11 +272,11 @@ body.panel-on .chin{bottom:auto;top:90px}
 }
 
 .pal{display:inline-block;opacity:0;transform:translateY(26px) rotate(1.5deg);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}.pal.va{opacity:1;transform:none}
-.js .rv{opacity:0;transform:translateX(-30px);transition:opacity .75s ease,transform .8s cubic-bezier(.16,1,.3,1)}.js .rv.d1{transform:translateX(30px)}.js .rv.in{opacity:1;transform:none;filter:none}
-.tarj{position:relative;transition:transform .35s,border-color .35s}.tarj::before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;border:2px solid transparent;transition:border-color .35s}.tarj:hover::before{border-color:var(--a)}.tarj:hover{transform:translateY(-4px)}
+.js .rv{opacity:0;transform:translateY(26px) scale(.982);filter:blur(4px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1),filter .55s ease}.js .rv.in{opacity:1;transform:none;filter:none}
+.tarj{transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s,border-color .3s}.tarj:hover{transform:translateY(-9px);box-shadow:0 26px 50px -22px rgba(0,0,0,.5)}
 .avance{height:5px;top:0;background:var(--a);box-shadow:0 0 16px var(--a)}
-@keyframes subeba{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}.flota{animation:subeba 3s ease-in-out infinite}.flota:hover{transform:scale(1.1)}
-.flota{right:18px;bottom:92px}
+.flota{box-shadow:0 14px 34px -10px rgba(37,211,102,.65)}.flota:hover{transform:scale(1.1) translateY(-3px)}
+.flota{left:18px;bottom:92px}
 @media(max-width:620px){.flota{bottom:84px}}
 </style>
 </head>
@@ -276,27 +284,25 @@ body.panel-on .chin{bottom:auto;top:90px}
 <div class="aviso">Propuesta de diseño para <b>La Muralla Restaurante</b> — muestra de cómo quedaría su página.</div>
 <main id="inicio">
 
-<div class="cinta-av">Pedidos por WhatsApp · listo en unos minutos</div>
-<header class="cab-m"><div class="w">
-  <a class="marca" href="#inicio"><i>🍛</i><span><b>La Muralla Restaurante</b><span>Comida criolla</span></span></a>
-  <span class="abierto-m"><i></i>Todos los días: 11:00 am – 9:00 pm</span>
-</div></header>
-<section class="destacado"><div class="w"><div class="dest-caja">
-  <div class="dest-tx">
-    <h1>El sabor <em>que uno recuerda</em></h1>
-    <p>La comida que te sostiene el día, hecha con lo que trajo el mercado esta mañana.</p>
-    <div class="cta">
-      <a class="btn btn-wa" href="https://wa.me/51912512472?text=%C2%A1Hola%20La%20Muralla%20Restaurante%21%20Quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>Pedir por WhatsApp</a>
-      <a class="btn btn-l" style="color:#fff;border-color:rgba(255,255,255,.32)" href="#menu">Ver precios</a>
-    </div>
-    <div class="dest-datos"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Lima</span><span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>+51912512472</span></div>
+<div class="filete"></div>
+<header class="enc"><div class="w">
+  <p class="mini">Comida criolla · Lima</p>
+  <h1>Aquí no hay<br><em>comida de ayer</em></h1>
+  <div class="orna" aria-hidden="true"><i></i></div>
+  <p>Lo que comerías en casa un domingo, pero sin lavar los platos.</p>
+  <div class="cta">
+    <a class="btn btn-wa" href="https://wa.me/51912512472?text=%C2%A1Hola%20La%20Muralla%20Restaurante%21%20Quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>Pedir por WhatsApp</a>
+    <a class="btn btn-l" href="#menu">Ver la carta</a>
   </div>
-  <div class="dest-foto"><img src="https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=1900&amp;q=78&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="La Muralla Restaurante" fetchpriority="high"></div>
-</div></div></section>
+</div></header>
+<div class="foto-ancha"><img src="https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=1900&amp;q=78&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="La Muralla Restaurante" fetchpriority="high"></div>
+<div class="tira-datos"><div class="w">
+  <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Todos los días: 11:00 am – 9:00 pm</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Lima</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H8l-4 4z"/></svg>Pedidos por WhatsApp</span>
+</div></div>
 
 <section class="sec" id="menu"><div class="w">
   <div class="centro">
-    <span class="rot">Para comer hoy</span>
+    <span class="rot">Nuestro menú</span>
     <h2 class="tit">Lo que <em>servimos</em></h2>
     <p class="baja">Todo se prepara al momento. Toca el <b>+</b> para armar tu pedido y mandarlo por WhatsApp.</p>
   </div>
@@ -328,7 +334,7 @@ body.panel-on .chin{bottom:auto;top:90px}
 
 
 <section class="cierre"><div class="w">
-  <h2>Haz tu pedido <em>ahora</em></h2>
+  <h2>Te esperamos <em>hoy</em></h2>
   <p>Mándanos lo que quieres por WhatsApp y lo tenemos listo cuando llegues.</p>
   <a class="btn btn-wa" href="https://wa.me/51912512472?text=%C2%A1Hola%20La%20Muralla%20Restaurante%21%20Quiero%20hacer%20un%20pedido." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>Pedir por WhatsApp</a>
 </div></section>
@@ -359,7 +365,7 @@ body.panel-on .chin{bottom:auto;top:90px}
 <script>
 document.documentElement.className += " js";
 (function(){
-const WA="51912512472", MON="S/ ", NEG="La Muralla Restaurante", PLATOS=[{"id": "p0", "n": "Mofongo", "p": "S/ 29", "v": 29.0, "d": "Machacado al momento, con chicharrón y ajo.", "e": "🥔", "img": "https://images.unsplash.com/photo-1623188475375-dcb897bfdb66?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p1", "n": "Costillas guisadas", "p": "S/ 35", "v": 35.0, "d": "Blanditas, con su salsa espesa para el arroz.", "e": "🍖", "img": "https://images.unsplash.com/photo-1544025162-d76694265947?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": "Nuestro clásico"}, {"id": "p2", "n": "Sopa del día", "p": "S/ 20", "v": 20.0, "d": "Cambia cada jornada. Pregunte cuál hay hoy.", "e": "🥣", "img": "https://images.unsplash.com/photo-1607330289024-1535c6b4e1c1?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p3", "n": "Pollo guisado", "p": "S/ 25", "v": 25.0, "d": "El de todos los días, el que nunca falla.", "e": "🍗", "img": "https://images.unsplash.com/photo-1606626135925-0cd311a3624e?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p4", "n": "Almuerzo del día", "p": "S/ 20", "v": 20.0, "d": "Sopa, plato fuerte, arroz, ensalada y jugo natural.", "e": "🍛", "img": "https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p5", "n": "Carne guisada", "p": "S/ 26", "v": 26.0, "d": "Cocida lento hasta deshacerse sola, con arroz blanco.", "e": "🥘", "img": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}];
+const WA="51912512472", MON="S/ ", NEG="La Muralla Restaurante", PLATOS=[{"id": "p0", "n": "Arroz con pollo", "p": "S/ 24", "v": 24.0, "d": "Con su punto de sazón y verduras.", "e": "🍚", "img": "https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p1", "n": "Jugo natural", "p": "S/ 10", "v": 10.0, "d": "De la fruta que haya ese día, bien frío.", "e": "🥤", "img": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p2", "n": "Costillas guisadas", "p": "S/ 35", "v": 35.0, "d": "Blanditas, con su salsa espesa para el arroz.", "e": "🍖", "img": "https://images.unsplash.com/photo-1544025162-d76694265947?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": "Nuestro clásico"}, {"id": "p3", "n": "Pescado frito", "p": "S/ 37", "v": 37.0, "d": "Entero y crujiente, con tostones y ensalada.", "e": "🐟", "img": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p4", "n": "Almuerzo del día", "p": "S/ 19", "v": 19.0, "d": "Sopa, plato fuerte, arroz, ensalada y jugo natural.", "e": "🍛", "img": "https://images.unsplash.com/photo-1583549323543-7ae855a78d6d?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}, {"id": "p5", "n": "Chivo guisado", "p": "S/ 38", "v": 38.0, "d": "Con su orégano y su tiempo. De los que piden dos veces.", "e": "🍖", "img": "https://images.unsplash.com/photo-1623188475375-dcb897bfdb66?w=760&q=74&fm=jpg&fit=crop&auto=format", "s": null}];
 const ICO='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>';
 const $=s=>document.querySelector(s);
 document.getElementById("rejilla").innerHTML = PLATOS.map(p => {
@@ -373,7 +379,7 @@ document.getElementById("rejilla").innerHTML = PLATOS.map(p => {
   return '<article class="tarj" data-id="'+p.id+'">'+
     '<div class="tarj-img" data-emoji="'+p.e+'">'+(p.s?'<span class="sello">'+p.s+'</span>':'')+
       '<img src="'+p.img+'" alt="'+p.n+'" decoding="async"></div>'+
-    '<div class="tarj-tx"><div class="tarj-cab"><h3>'+p.n+'</h3><span class="pz">'+p.p+'</span></div>'+
+    '<div class="tarj-tx"><div class="tarj-cab"><span class="pz">'+p.p+'</span><h3>'+p.n+'</h3></div>'+
     '<p>'+p.d+'</p>'+ACC+'</div></article>';
 
 }).join("");
@@ -524,7 +530,7 @@ if(hi && !window.matchMedia("(prefers-reduced-motion:reduce)").matches){
 
 (function(){ var f=document.querySelector(".hero-img, .portada img, .hero img"); if(!f) return;
   var g=function(){ var y=window.scrollY;
-    if(y<900) f.style.transform="translate3d(0,"+(y*0.16)+"px,0) scale("+(1+y*0.00012)+")"; };
+    if(y<900) f.style.transform="translate3d(0,"+(y*0.1)+"px,0) scale("+(1+y*0.00012)+")"; };
   window.addEventListener("scroll",g,{passive:true}); g(); })();
 
 (function(){
