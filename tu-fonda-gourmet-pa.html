@@ -525,7 +525,11 @@ if(hi && !window.matchMedia("(prefers-reduced-motion:reduce)").matches){
     if(n.nodeType===3){ n.textContent.split(/(\s+)/).forEach(function(x){
         if(!x.trim()){ t.push(document.createTextNode(x)); return; }
         var s=document.createElement("span"); s.className="pal"; s.textContent=x; t.push(s); });
-    } else if(n.nodeType===1){ var w=document.createElement("span"); w.className="pal";
+    } else if(n.nodeType===1){
+        /* El <br> va suelto: dentro de .pal (inline-block) deja de
+           romper la linea y el titular sale pegado. */
+        if(n.tagName==="BR"){ t.push(n.cloneNode(true)); return; }
+        var w=document.createElement("span"); w.className="pal";
         w.appendChild(n.cloneNode(true)); t.push(w); }
   });
   h1.innerHTML=""; t.forEach(function(x){ h1.appendChild(x); });
