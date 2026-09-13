@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es" class="boton-recto filtro-frio">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hondumex Sabor Latino | Comida criolla en Houston</title>
+<meta name="description" content="Comida criolla en Houston. Recetas que no están escritas en ningún lado, porque se aprendieron de pie junto a la olla.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#05080B">
+<meta property="og:title" content="Hondumex Sabor Latino">
+<meta property="og:description" content="Comida criolla en Houston. Recetas que no están escritas en ningún lado, porque se aprendieron de pie junto a la olla.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=1600&amp;q=70&amp;fm=jpg&amp;fit=crop&amp;auto=format">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://videos.pexels.com"><link rel="preconnect" href="https://images.unsplash.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap">
+<style>:root{--bg:#0A0F14;--panel:#121A22;--tinta:#EEF3F7;--suave:#94A3B0;--linea:rgba(255,255,255,.12);--a:#E7E43E;--c:#62A9EC;--dark:#05080B;--sobreA:#0B0B0B;--r:10px;--disp:"DM Serif Display",Georgia,serif;--sans:Manrope,system-ui,sans-serif;--pesoD:400}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{margin:0;background:var(--bg);color:var(--tinta);font-family:var(--sans);font-size:17px;line-height:1.65;
+ -webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+h1,h2,h3{font-family:var(--disp);font-weight:var(--pesoD);margin:0;line-height:1;letter-spacing:-.025em}
+p{margin:0}
+::selection{background:var(--a);color:var(--sobreA)}
+.w{width:min(1240px,calc(100% - 48px));margin-inline:auto}
+.rot{display:inline-flex;align-items:center;gap:12px;font:700 .72rem/1 var(--sans);letter-spacing:.24em;
+ text-transform:uppercase;color:var(--a)}
+.rot::before{content:"";width:34px;height:1px;background:currentColor}
+.tit{font-size:clamp(2.4rem,6vw,5.2rem);margin-top:22px}
+.tit em{font-style:italic;color:var(--a)}
+.baja{color:var(--suave);max-width:56ch;margin-top:22px;font-size:1.06rem}
+.sec{padding:clamp(80px,12vw,150px) 0;position:relative}
+.aviso{position:fixed;top:0;left:0;right:0;height:30px;z-index:96;background:#000;color:#fff;text-align:center;
+ font-size:.7rem;line-height:30px;padding:0 14px;letter-spacing:.03em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body{padding-top:0}
+.nav{top:30px!important}
+.progreso{top:30px!important}
+.aviso b{color:var(--c)}
+
+/* botones */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 32px;
+ border-radius:100px;font-weight:700;font-size:.95rem;letter-spacing:.01em;overflow:hidden;isolation:isolate;
+ border:1px solid transparent;white-space:nowrap;transition:color .45s,border-color .45s}
+.btn::after{content:"";position:absolute;inset:0;z-index:-1;background:var(--hov,#fff);transform:translateY(101%);
+ border-radius:inherit;transition:transform .55s cubic-bezier(.7,0,.2,1)}
+.btn:hover::after{transform:none}
+.btn svg{width:18px;height:18px}
+.btn-a{background:var(--a);color:var(--sobreA);--hov:var(--tinta)}
+.btn-a:hover{color:var(--bg)}
+.btn-l{border-color:currentColor;--hov:currentColor}
+.btn-l:hover{color:var(--bg)}
+.btn-wa{background:#25D366;color:#062a12;--hov:#fff}
+
+/* preloader */
+.pre{position:fixed;inset:0;z-index:200;background:var(--dark);color:#fff;display:none;place-items:center}
+.js-anim .pre{display:grid}
+.pre-in{text-align:center}
+.pre b{display:block;font-family:var(--disp);font-size:clamp(2rem,6vw,4rem);font-weight:var(--pesoD);overflow:hidden}
+.pre b span{display:inline-block}
+.pre small{display:block;margin-top:14px;font:600 .8rem/1 var(--sans);letter-spacing:.3em;color:var(--c)}
+
+/* cursor */
+.cur{position:fixed;left:0;top:0;width:12px;height:12px;border-radius:50%;background:var(--a);pointer-events:none;
+ z-index:190;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:width .3s,height .3s,background .3s;display:none}
+.cur.big{width:74px;height:74px;background:#fff}
+@media (hover:hover) and (pointer:fine){.js-anim .cur{display:block}}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:80;transition:background .4s,transform .5s cubic-bezier(.7,0,.2,1),padding .4s;padding:22px 0}
+.nav.sol{background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);padding:12px 0;
+ border-bottom:1px solid var(--linea)}
+.nav.fuera{transform:translateY(-110%)}
+.nav .w{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.marca{font-family:var(--disp);font-weight:var(--pesoD);font-size:1.35rem;letter-spacing:-.02em;line-height:1}
+.marca small{display:block;font:600 .6rem/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--a);margin-top:5px}
+.links{display:flex;gap:30px;font-size:.9rem;font-weight:600}
+.links a{position:relative}
+.links a::after{content:"";position:absolute;left:0;bottom:-6px;width:100%;height:1px;background:currentColor;
+ transform:scaleX(0);transform-origin:right;transition:transform .45s cubic-bezier(.7,0,.2,1)}
+.links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav .btn{padding:12px 22px;font-size:.85rem}
+@media(max-width:900px){.links{display:none}}
+
+/* marquee */
+.cinta{overflow:hidden;white-space:nowrap;padding:26px 0;border-block:1px solid var(--linea);background:var(--bg)}
+.cinta-in{display:inline-flex;animation:cinta 28s linear infinite}
+.cinta span{font-family:var(--disp);font-weight:var(--pesoD);font-size:clamp(2rem,5vw,4rem);padding-right:.6em;
+ display:inline-flex;align-items:center;gap:.6em}
+.cinta span i{width:.35em;height:.35em;border-radius:50%;background:var(--a);display:block}
+.cinta span:nth-child(even){-webkit-text-stroke:1px var(--tinta);color:transparent}
+@keyframes cinta{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.cinta-in{animation:none}}
+
+/* carta */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-top:40px}
+.tab{padding:11px 22px;border-radius:100px;border:1px solid var(--linea);font-weight:700;font-size:.88rem;transition:.3s}
+.tab.on{background:var(--tinta);color:var(--bg);border-color:var(--tinta)}
+.carta{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 40px;margin-top:36px}
+.plato{display:grid;grid-template-columns:96px 1fr auto;gap:18px;align-items:center;padding:18px 0;border-bottom:1px solid var(--linea)}
+.plato.oculto{display:none}
+.plato-f{width:96px;height:96px;border-radius:var(--r);overflow:hidden;background:var(--panel)}
+.plato-f img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.plato:hover .plato-f img{transform:scale(1.12)}
+.plato h3{font-size:1.3rem;letter-spacing:-.01em}
+.plato h3 small{font:700 .62rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--sobreA);
+ background:var(--a);padding:4px 8px;border-radius:100px;vertical-align:middle;margin-left:8px}
+.plato p{color:var(--suave);font-size:.9rem;margin-top:5px}
+.plato-d{text-align:right}
+.plato-d b{display:block;font-family:var(--disp);font-size:1.35rem;color:var(--a);font-weight:var(--pesoD)}
+.mas{margin-top:8px;width:40px;height:40px;border-radius:50%;border:1px solid var(--linea);font-size:1.2rem;display:inline-grid;place-items:center;transition:.3s}
+.mas:hover{background:var(--a);color:var(--sobreA);border-color:var(--a)}
+.mas.puesto{background:var(--a);color:var(--sobreA);border-color:var(--a)}
+@media(max-width:900px){.carta{grid-template-columns:1fr}.plato{grid-template-columns:76px 1fr auto}.plato-f{width:76px;height:76px}}
+
+/* reels de vídeo */
+.reels{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}
+.reel{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:3/4;background:var(--dark)}
+.reel video,.reel img{width:100%;height:100%;object-fit:cover}
+.reel span{position:absolute;left:18px;bottom:16px;color:#fff;font-weight:700;font-size:.9rem;text-shadow:0 2px 12px #000a}
+@media(max-width:900px){.reels{grid-template-columns:1fr 1fr}.reel:nth-child(3){display:none}}
+
+/* cifras */
+.cifras{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:60px}
+.cifra b{display:block;font-family:var(--disp);font-size:clamp(2.6rem,6vw,4.6rem);font-weight:var(--pesoD);color:var(--a);line-height:1}
+.cifra span{color:var(--suave);font-size:.9rem}
+@media(max-width:900px){.cifras{grid-template-columns:1fr 1fr}}
+
+/* reseñas */
+.resenas{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}
+.resena{background:var(--panel);border:1px solid var(--linea);border-radius:var(--r);padding:34px;display:flex;flex-direction:column;gap:22px}
+.resena .est{color:var(--c);letter-spacing:.15em}
+.resena p{font-family:var(--disp);font-size:1.3rem;line-height:1.35;letter-spacing:-.01em}
+.resena small{color:var(--suave);font-weight:600;margin-top:auto}
+@media(max-width:900px){.resenas{grid-template-columns:1fr}}
+
+/* reservar */
+.reserva{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.form{background:var(--panel);border:1px solid var(--linea);border-radius:calc(var(--r) + 8px);padding:34px;display:grid;gap:16px}
+.form label{display:grid;gap:7px;font:700 .72rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--suave)}
+.form input,.form select,.form textarea{width:100%;padding:15px 16px;border-radius:12px;border:1px solid var(--linea);
+ background:var(--bg);color:var(--tinta);font-size:1rem;letter-spacing:0;text-transform:none;font-weight:500}
+.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid var(--a);outline-offset:1px}
+.form .fila{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pedido-l{font-size:.92rem;color:var(--suave);border-top:1px dashed var(--linea);padding-top:12px}
+.pedido-l b{color:var(--tinta)}
+.horario{margin-top:30px;display:grid;gap:1px;background:var(--linea);border:1px solid var(--linea);border-radius:var(--r);overflow:hidden}
+.horario div{display:flex;justify-content:space-between;gap:14px;background:var(--bg);padding:15px 20px}
+.abierto{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.85rem;margin-top:22px}
+.abierto i{width:9px;height:9px;border-radius:50%;background:#2fbf6a;box-shadow:0 0 0 0 #2fbf6a88;animation:late 1.8s infinite}
+@keyframes late{70%{box-shadow:0 0 0 10px #2fbf6a00}100%{box-shadow:0 0 0 0 #2fbf6a00}}
+@media(max-width:900px){.reserva{grid-template-columns:1fr}.form .fila{grid-template-columns:1fr}}
+
+/* preguntas */
+.faq{margin-top:40px;border-top:1px solid var(--linea)}
+.faq details{border-bottom:1px solid var(--linea)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:24px 0;
+ font-family:var(--disp);font-size:1.35rem;font-weight:var(--pesoD)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{font-style:normal;transition:transform .4s;color:var(--a)}
+.faq details[open] summary i{transform:rotate(45deg)}
+.faq details p{padding:0 0 24px;color:var(--suave);max-width:70ch}
+
+/* pie */
+.pie{background:var(--dark);color:#fff;padding:110px 0 40px;overflow:hidden}
+.pie-gigante{font-family:var(--disp);font-weight:var(--pesoD);font-size:clamp(3.4rem,13vw,13rem);line-height:.85;letter-spacing:-.05em;white-space:nowrap}
+.pie-g{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-top:70px;color:#ffffffb3;font-size:.93rem}
+.pie-g b{display:block;color:#fff;margin-bottom:10px;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase}
+.pie-f{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:60px;padding-top:26px;border-top:1px solid #ffffff22;font-size:.8rem;color:#ffffff80}
+@media(max-width:900px){.pie-g{grid-template-columns:1fr}}
+
+/* flotantes */
+.flota{position:fixed;right:22px;bottom:22px;z-index:85;width:60px;height:60px;border-radius:50%;background:#25D366;
+ color:#062a12;display:grid;place-items:center;box-shadow:0 16px 40px -12px #25D366aa;transition:transform .4s}
+.flota:hover{transform:scale(1.08) rotate(-8deg)}
+.flota svg{width:28px;height:28px}
+.barra-p{position:fixed;left:50%;bottom:22px;z-index:84;transform:translate(-50%,160%);transition:transform .55s cubic-bezier(.7,0,.2,1);
+ background:var(--tinta);color:var(--bg);border-radius:100px;padding:10px 10px 10px 24px;display:flex;align-items:center;gap:16px;
+ box-shadow:0 20px 50px -20px #000a;font-weight:700;font-size:.92rem;white-space:nowrap}
+.barra-p.on{transform:translate(-50%,0)}
+.barra-p .btn{padding:11px 20px;font-size:.85rem}
+.progreso{position:fixed;left:0;top:0;height:3px;background:var(--a);z-index:95;width:100%;transform-origin:left;transform:scaleX(0)}
+
+/* animaciones: solo si el JS de efectos arrancó */
+.linea{display:block;overflow:hidden;padding-bottom:.06em}
+.linea>span{display:inline-block}
+.mask{overflow:hidden;border-radius:var(--r)}
+.mask img{transform-origin:center}
+@media (prefers-reduced-motion:reduce){.cur{display:none!important}}
+
+
+.h-cine{position:relative;height:100svh;min-height:660px;overflow:hidden;color:#fff;background:var(--dark)}
+.h-media{position:absolute;inset:0}
+.h-media video,.h-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.h-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0008 0%,#0000 35%,#000a 78%,#000e 100%)}
+.h-cine-in{position:absolute;left:0;right:0;bottom:0;z-index:2;padding-bottom:10vh}
+.h-cine h1{font-size:clamp(3.2rem,9vw,9.4rem);max-width:12ch;line-height:.95}
+.h-cine h1 em{color:var(--a)}
+.h-cine .lede{max-width:44ch;margin-top:26px;font-size:1.12rem;color:#ffffffd0}
+.h-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.h-cine .btn-l{color:#fff}
+.bajar{position:absolute;right:4vw;bottom:10vh;z-index:2;writing-mode:vertical-rl;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:#fffa;display:flex;align-items:center;gap:14px}
+.bajar::after{content:"";width:1px;height:70px;background:linear-gradient(#fff,#fff0)}
+.historia{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:center}
+.ilum{font-family:var(--disp);font-size:clamp(1.7rem,3.3vw,3rem);line-height:1.2;letter-spacing:-.02em;margin-top:26px}
+.historia .mask{aspect-ratio:4/5}
+.historia .mask img{width:100%;height:100%;object-fit:cover}
+.hz{height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;background:var(--panel)}
+.pista{display:flex;gap:28px;padding:50px 0 0 max(24px,calc((100vw - 1240px)/2));will-change:transform}
+.tarjeta{flex:0 0 min(420px,78vw);border-radius:var(--r);overflow:hidden;position:relative;aspect-ratio:3/4;background:var(--dark)}
+.tarjeta img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.tarjeta:hover img{transform:scale(1.08)}
+.tarjeta div{position:absolute;inset:auto 0 0 0;padding:26px;background:linear-gradient(#0000,#000d);color:#fff;display:flex;justify-content:space-between;align-items:end;gap:14px}
+.tarjeta h3{font-size:1.7rem}
+.tarjeta b{font-family:var(--disp);font-size:1.5rem;color:var(--c)}
+@media(max-width:900px){.historia{grid-template-columns:1fr;gap:40px}.hz{height:auto;padding:90px 0}
+ .pista{overflow-x:auto;scroll-snap-type:x mandatory;padding-right:24px}.tarjeta{scroll-snap-align:start}.bajar{display:none}}
+
+
+.real-nota{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-top:26px}
+.real-nota b{font-family:var(--disp);font-size:clamp(2.6rem,6vw,4rem);line-height:1;color:var(--a);font-weight:var(--pesoD)}
+.real-nota span{color:var(--c);letter-spacing:.14em}
+.real-nota small{color:var(--suave);font-size:.9rem}
+.real-g{display:grid;gap:14px;margin-top:40px}
+.real-1{grid-template-columns:1fr}.real-2{grid-template-columns:1fr 1fr}.real-3{grid-template-columns:2fr 1fr 1fr}
+.real-4{grid-template-columns:repeat(4,1fr)}
+.real-f{margin:0;border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;background:var(--panel);border:1px solid var(--linea)}
+.real-f img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.real-f:hover img{transform:scale(1.06)}
+@media(max-width:900px){.real-3,.real-4{grid-template-columns:1fr 1fr}.real-3 .real-f:first-child{grid-column:1/-1}}
+
+
+.boton-recto .btn,.boton-recto .btn::after{border-radius:4px}
+.boton-suave .btn,.boton-suave .btn::after{border-radius:14px}
+.sin-cursor .cur{display:none!important}
+.filtro-calido [data-hero-media] video{filter:saturate(1.12) sepia(.14) contrast(1.03)}
+.filtro-contraste [data-hero-media] video{filter:contrast(1.14) saturate(1.1)}
+.filtro-frio [data-hero-media] video{filter:saturate(.9) hue-rotate(-8deg) contrast(1.05)}
+.filtro-grises [data-hero-media] video{filter:grayscale(1) contrast(1.1)}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Restaurant", "name": "Hondumex Sabor Latino", "telephone": "+18329188979", "address": "11929 East Fwy, Houston, TX 77013, United States", "image": "https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=1600&q=70&fm=jpg&fit=crop&auto=format", "openingHours": "Hoy (sábado): 1–11:30 p.m.", "aggregateRating": {"@type": "AggregateRating", "ratingValue": 4.5, "reviewCount": 68}}</script>
+</head>
+<body>
+<div class="aviso">Propuesta de diseño para <b>Hondumex Sabor Latino</b> — muestra de cómo quedaría su página.</div>
+<div class="cur" aria-hidden="true"></div><div class="progreso" aria-hidden="true"></div>
+<header class="nav"><div class="w">
+  <a class="marca" href="#inicio">Hondumex Sabor Latino<small>Comida criolla · Houston</small></a>
+  <nav class="links"><a href="#carta">Carta</a><a href="#historia">Nosotros</a><a href="#fotos">Fotos</a><a href="#reservar">Contacto</a></nav>
+  <a class="btn btn-a" href="#reservar">Hacer pedido</a>
+</div></header>
+<main>
+<section class="h-cine" id="inicio" data-hero>
+  <div class="h-media" data-hero-media data-encoge><video class="" autoplay data-inmediato muted loop playsinline preload="none" poster="https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=1600&amp;q=70&amp;fm=jpg&amp;fit=crop&amp;auto=format" data-sd="https://videos.pexels.com/video-files/5101338/5101338-sd_960_540_25fps.mp4" data-hd="https://videos.pexels.com/video-files/5101338/5101338-hd_1280_720_50fps.mp4"></video></div>
+  <div class="w h-cine-in">
+    <span class="rot" data-hero-in>Comida criolla · Houston</span>
+    <h1 style="margin-top:22px"><span class="linea"><span>Lo que se cocina</span></span><span class="linea"><span><em>hoy en la cocina</em></span></span></h1>
+    <p class="lede" data-hero-in>Recetas que no están escritas en ningún lado, porque se aprendieron de pie junto a la olla.</p>
+    <div class="h-cta" data-hero-in><a class="btn btn-a" href="#reservar">Hacer pedido <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-l" href="#carta">Ver la carta</a></div>
+  </div>
+  <div class="bajar">Desliza</div>
+</section><section class="sec reales" id="fotos"><div class="w">
+  <span class="rot">Así es Hondumex Sabor Latino</span>
+  <h2 class="tit" data-titular><span class="linea"><span>Tal como te</span></span><span class="linea"><span><em>reciben hoy</em></span></span></h2>
+  <div class="real-nota" data-rv><b>4.5</b><span>★★★★</span><small>68 reseñas en Google</small></div>
+  <div class="real-g real-2"><figure class="real-f" data-rv><img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWn39xyMZMEWTmvdMAaKiqXgi65z26AYZ_EW2cAtIgx561Qwb_wDQQphqh44DAy8xC5y4K3NW0jg2DSVuVZNE-NRUK1A9FQQCXneNpSa94hYnt1QV6oR-SajpNv7dZuAgqcq1jc2=w1200-h900-k-no" alt="Hondumex Sabor Latino" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></figure><figure class="real-f" data-rv><img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWknPxC_WdlDo5E2uJjjlPHft8-qCmTfufsf3Bk7vV_gNXKM-4HKm455W3IMjfrNoe8Gt9rdkHpsbE8nq-HJJ5p10LYcdSA2NIiQDJBjl5UnwKBKTPdgVHvqeEx9ACVUHeLNBkEwBQ=w1200-h900-k-no" alt="Hondumex Sabor Latino" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></figure></div>
+</div></section><section class="hz" data-horizontal><div class="w"><span class="rot">Lo más pedido</span>
+  <h2 class="tit" data-titular><span class="linea"><span>Lo que</span></span><span class="linea"><span><em>piden de nuevo</em></span></span></h2></div>
+  <div class="pista" data-pista><article class="tarjeta"><img src="https://images.unsplash.com/photo-1623188475375-dcb897bfdb66?w=900&amp;q=76&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="Almuerzo del día" loading="lazy"><div><h3>Almuerzo del día</h3><b>$15.59</b></div></article><article class="tarjeta"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=900&amp;q=76&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="Arroz con pollo" loading="lazy"><div><h3>Arroz con pollo</h3><b>$20.79</b></div></article><article class="tarjeta"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=900&amp;q=76&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="Carne guisada" loading="lazy"><div><h3>Carne guisada</h3><b>$23.39</b></div></article><article class="tarjeta"><img src="https://images.unsplash.com/photo-1606626135925-0cd311a3624e?w=900&amp;q=76&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="Pollo guisado" loading="lazy"><div><h3>Pollo guisado</h3><b>$20.46</b></div></article><article class="tarjeta"><img src="https://images.unsplash.com/photo-1627880872609-f7ddd76616c2?w=900&amp;q=76&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="Sancocho" loading="lazy"><div><h3>Sancocho</h3><b>$24.71</b></div></article><article class="tarjeta"><img src="https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=900&amp;q=76&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="Res mechada" loading="lazy"><div><h3>Res mechada</h3><b>$23.28</b></div></article><article class="tarjeta"><img src="https://images.unsplash.com/photo-1617904116128-f55dd979f087?w=900&amp;q=76&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="Mofongo" loading="lazy"><div><h3>Mofongo</h3><b>$23.39</b></div></article></div>
+</section><section class="sec" id="carta"><div class="w">
+  <span class="rot">La carta</span>
+  <h2 class="tit" data-titular><span class="linea"><span>Lo que</span></span><span class="linea"><span><em>sale hoy</em></span></span></h2>
+  <p class="baja" data-rv>Toca el <b>+</b> en lo que quieras y al final mándalo todo por WhatsApp, ya sumado.</p>
+  <div class="tabs" data-rv><button class="tab on" type="button" data-g="0">Del día</button><button class="tab" type="button" data-g="1">De la casa</button></div>
+  <div class="carta"><article class="plato" data-g="0">
+  <div class="plato-f"><img src="https://images.unsplash.com/photo-1623188475375-dcb897bfdb66?w=900&amp;q=76&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="Almuerzo del día" loading="lazy"></div>
+  <div><h3>Almuerzo del día</h3><p>Sopa, plato fuerte, arroz, ensalada y jugo natural.</p></div>
+  <div class="plato-d"><b>$15.59</b><button class="mas" type="button" data-id="p0" aria-label="Añadir Almuerzo del día">+</button></div>
+</article><article class="plato" data-g="0">
+  <div class="plato-f"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=900&amp;q=76&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="Arroz con pollo" loading="lazy"></div>
+  <div><h3>Arroz con pollo<small>La favorita</small></h3><p>Con su punto de sazón y verduras.</p></div>
+  <div class="plato-d"><b>$20.79</b><button class="mas" type="button" data-id="p1" aria-label="Añadir Arroz con pollo">+</button></div>
+</article><article class="plato" data-g="0">
+  <div class="plato-f"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=900&amp;q=76&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="Carne guisada" loading="lazy"></div>
+  <div><h3>Carne guisada</h3><p>Cocida lento hasta deshacerse sola, con arroz blanco.</p></div>
+  <div class="plato-d"><b>$23.39</b><button class="mas" type="button" data-id="p2" aria-label="Añadir Carne guisada">+</button></div>
+</article><article class="plato" data-g="0">
+  <div class="plato-f"><img src="https://images.unsplash.com/photo-1606626135925-0cd311a3624e?w=900&amp;q=76&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="Pollo guisado" loading="lazy"></div>
+  <div><h3>Pollo guisado</h3><p>El de todos los días, el que nunca falla.</p></div>
+  <div class="plato-d"><b>$20.46</b><button class="mas" type="button" data-id="p3" aria-label="Añadir Pollo guisado">+</button></div>
+</article><article class="plato" data-g="0">
+  <div class="plato-f"><img src="https://images.unsplash.com/photo-1627880872609-f7ddd76616c2?w=900&amp;q=76&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="Sancocho" loading="lazy"></div>
+  <div><h3>Sancocho</h3><p>Cocido despacio desde temprano, con su yuca y su plátano.</p></div>
+  <div class="plato-d"><b>$24.71</b><button class="mas" type="button" data-id="p4" aria-label="Añadir Sancocho">+</button></div>
+</article><article class="plato" data-g="0">
+  <div class="plato-f"><img src="https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=900&amp;q=76&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="Res mechada" loading="lazy"></div>
+  <div><h3>Res mechada</h3><p>Deshilachada en su salsa, con arroz y habichuelas.</p></div>
+  <div class="plato-d"><b>$23.28</b><button class="mas" type="button" data-id="p5" aria-label="Añadir Res mechada">+</button></div>
+</article><article class="plato oculto" data-g="1">
+  <div class="plato-f"><img src="https://images.unsplash.com/photo-1617904116128-f55dd979f087?w=900&amp;q=76&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="Mofongo" loading="lazy"></div>
+  <div><h3>Mofongo</h3><p>Machacado al momento, con chicharrón y ajo.</p></div>
+  <div class="plato-d"><b>$23.39</b><button class="mas" type="button" data-id="p6" aria-label="Añadir Mofongo">+</button></div>
+</article><article class="plato oculto" data-g="1">
+  <div class="plato-f"><img src="https://images.unsplash.com/photo-1567030492990-950d9855154b?w=900&amp;q=76&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="Pescado frito" loading="lazy"></div>
+  <div><h3>Pescado frito</h3><p>Entero y crujiente, con tostones y ensalada.</p></div>
+  <div class="plato-d"><b>$28.21</b><button class="mas" type="button" data-id="p7" aria-label="Añadir Pescado frito">+</button></div>
+</article><article class="plato oculto" data-g="1">
+  <div class="plato-f"><img src="https://images.unsplash.com/photo-1665593998976-d957f2827fe7?w=900&amp;q=76&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="Sopa del día" loading="lazy"></div>
+  <div><h3>Sopa del día</h3><p>Cambia cada jornada. Pregunte cuál hay hoy.</p></div>
+  <div class="plato-d"><b>$16.83</b><button class="mas" type="button" data-id="p8" aria-label="Añadir Sopa del día">+</button></div>
+</article><article class="plato oculto" data-g="1">
+  <div class="plato-f"><img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=900&amp;q=76&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt="Costillas guisadas" loading="lazy"></div>
+  <div><h3>Costillas guisadas</h3><p>Blanditas, con su salsa espesa para el arroz.</p></div>
+  <div class="plato-d"><b>$27.26</b><button class="mas" type="button" data-id="p9" aria-label="Añadir Costillas guisadas">+</button></div>
+</article></div>
+  <p class="baja" style="font-size:.82rem">Precios en USD. Carta de muestra: se cambia por la real del negocio.</p>
+</div></section><section class="sec" style="padding-top:0"><div class="w"><div class="cifras"><div class="cifra" data-rv><b data-cuenta="4.5" data-suf="">4.5</b><span>Estrellas en Google</span></div><div class="cifra" data-rv><b data-cuenta="68" data-suf="+">68+</b><span>Reseñas de clientes</span></div><div class="cifra" data-rv><b data-cuenta="2" data-suf=" toques">2 toques</b><span>Para hacer tu pedido</span></div><div class="cifra" data-rv><b data-cuenta="24" data-suf=" h">24 h</b><span>Tu página siempre abierta</span></div></div></div></section><section class="sec" id="historia"><div class="w"><div class="historia">
+  <div><span class="rot">Nuestra historia</span><p class="ilum" data-ilumina>Aquí no hay menú congelado ni comida de ayer. Se cocina temprano, se sirve caliente y cuando se acaba, se acabó. Así ha sido siempre y así funciona.</p><p class="baja" data-rv>La mayoría de la gente que entra ya sabe lo que va a pedir, porque viene desde hace años. A los que llegan por primera vez les decimos lo mismo: pregunte qué salió hoy.</p></div>
+  <div class="mask"><img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWn39xyMZMEWTmvdMAaKiqXgi65z26AYZ_EW2cAtIgx561Qwb_wDQQphqh44DAy8xC5y4K3NW0jg2DSVuVZNE-NRUK1A9FQQCXneNpSa94hYnt1QV6oR-SajpNv7dZuAgqcq1jc2=w1200-h900-k-no" alt="Hondumex Sabor Latino" loading="lazy" referrerpolicy="no-referrer"></div>
+</div></div></section><section class="sec" id="reels" style="padding-top:0"><div class="w">
+  <span class="rot">Vídeos</span>
+  <h2 class="tit" data-titular><span class="linea"><span>Míralo</span></span><span class="linea"><span><em>en movimiento</em></span></span></h2>
+  <div class="reels"><div class="reel" data-rv><video class=""  muted loop playsinline preload="none" poster="https://images.unsplash.com/photo-1606626135925-0cd311a3624e?w=1200&amp;q=78&amp;fm=jpg&amp;fit=crop&amp;auto=format" data-sd="https://videos.pexels.com/video-files/5657164/5657164-sd_960_506_30fps.mp4" data-hd="https://videos.pexels.com/video-files/5657164/5657164-hd_1366_720_30fps.mp4"></video><span>Así se prepara</span></div><div class="reel" data-rv><video class=""  muted loop playsinline preload="none" poster="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=1200&amp;q=78&amp;fm=jpg&amp;fit=crop&amp;auto=format" data-sd="https://videos.pexels.com/video-files/4661944/4661944-sd_960_540_30fps.mp4" data-hd="https://videos.pexels.com/video-files/4661944/4661944-sd_960_540_30fps.mp4"></video><span>Detrás de la barra</span></div><div class="reel" data-rv><video class=""  muted loop playsinline preload="none" poster="https://images.unsplash.com/photo-1622688717978-52b2089546c8?w=1200&amp;q=78&amp;fm=jpg&amp;fit=crop&amp;auto=format" data-sd="https://videos.pexels.com/video-files/8626672/8626672-sd_960_540_25fps.mp4" data-hd="https://videos.pexels.com/video-files/8626672/8626672-hd_1280_720_25fps.mp4"></video><span>Hecho al momento</span></div></div>
+</div></section><section class="sec" id="reservar"><div class="w reserva">
+  <div>
+    <span class="rot">Contacto</span>
+    <h2 class="tit" data-titular><span class="linea"><span>Hacer</span></span><span class="linea"><span><em>en un minuto</em></span></span></h2>
+    <p class="baja" data-rv>Llenas esto y se abre WhatsApp con todo escrito. Te confirmamos en minutos.</p>
+    
+    <div class="horario" data-rv><div><span>Horario</span><b>Hoy (sábado): 1–11:30 p.m.</b></div><div><span>Dirección</span><b>11929 East Fwy, Houston, TX 77013, United States <a href="https://www.google.com/maps/place/?q=place_id:ChIJua3o6Pm9QIYRaJRuFP1I5jU" target="_blank" rel="noopener" style="color:var(--a)">Cómo llegar →</a></b></div><div><span>WhatsApp</span><b>+18329188979</b></div></div>
+  </div>
+  <form class="form" id="formR" data-accion="Hacer pedido" data-rv>
+    <label>Nombre<input name="Nombre" required placeholder="¿A nombre de quién?"></label>
+<div class="fila"><label>Para<select name="Tipo"><option>Recoger en el local</option><option>Envío a domicilio</option></select></label><label>Hora<input name="Hora" type="time"></label></div>
+<label>Dirección (si es envío)<input name="Dirección" placeholder="Barrio, calle, referencia"></label>
+    <label>Nota<textarea name="Nota" rows="2" placeholder="Algo que debamos saber"></textarea></label>
+    <p class="pedido-l" id="pedidoL"></p>
+    <button class="btn btn-wa" type="submit"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>Hacer pedido por WhatsApp</button>
+  </form>
+</div></section><section class="sec" style="padding-top:0"><div class="w">
+  <span class="rot">Preguntas</span>
+  <h2 class="tit" data-titular><span class="linea"><span>Antes de</span></span><span class="linea"><span><em>que preguntes</em></span></span></h2>
+  <div class="faq"><details data-rv><summary>¿Hacen envíos a domicilio?<i>+</i></summary><p>Escríbenos por WhatsApp con tu dirección y te confirmamos si llegamos y cuánto cuesta.</p></details><details data-rv><summary>¿Puedo reservar para un grupo grande?<i>+</i></summary><p>Claro. Avísanos por WhatsApp con tiempo y te guardamos el espacio.</p></details><details data-rv><summary>¿Qué formas de pago aceptan?<i>+</i></summary><p>Pregúntanos por WhatsApp y te decimos las opciones disponibles.</p></details><details data-rv><summary>¿Tienen opciones sin gluten o vegetarianas?<i>+</i></summary><p>Pregunta por las del día. Siempre adaptamos lo que se pueda.</p></details></div>
+</div></section>
+</main>
+<footer class="pie"><div class="w">
+  <a class="btn btn-a" href="https://api.whatsapp.com/send?phone=18329188979&amp;text=%C2%A1Hola%20Hondumex%20Sabor%20Latino%21%20Vi%20su%20p%C3%A1gina%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>Escríbenos ahora</a>
+  <div class="pie-gigante" style="margin-top:60px">Hondumex Sabor Latino</div>
+  <div class="pie-g">
+    <div><b>Comida criolla</b>Recetas que no están escritas en ningún lado, porque se aprendieron de pie junto a la olla.</div>
+    <div><b>Horario</b>Hoy (sábado): 1–11:30 p.m.</div>
+    <div><b>Contacto</b>+18329188979<br>Houston</div>
+  </div>
+  <div class="pie-f"><span>© 2026 Hondumex Sabor Latino</span><span>Hecha por Fábrica de Webs</span></div>
+</div></footer>
+<a class="flota" href="https://api.whatsapp.com/send?phone=18329188979&amp;text=%C2%A1Hola%20Hondumex%20Sabor%20Latino%21%20Vi%20su%20p%C3%A1gina%20y%20quiero%20informaci%C3%B3n." target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg></a>
+<div class="barra-p" id="barraP"><span id="barraN"></span><a class="btn btn-a" href="#reservar">Enviar pedido</a></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+const $=(s,c)=>(c||document).querySelector(s), $$=(s,c)=>[...(c||document).querySelectorAll(s)];
+const NEG="Hondumex Sabor Latino", WA="18329188979", MON="$", ITEMS=[{"id": "p0", "n": "Almuerzo del día", "v": 15.59}, {"id": "p1", "n": "Arroz con pollo", "v": 20.79}, {"id": "p2", "n": "Carne guisada", "v": 23.39}, {"id": "p3", "n": "Pollo guisado", "v": 20.46}, {"id": "p4", "n": "Sancocho", "v": 24.71}, {"id": "p5", "n": "Res mechada", "v": 23.28}, {"id": "p6", "n": "Mofongo", "v": 23.39}, {"id": "p7", "n": "Pescado frito", "v": 28.21}, {"id": "p8", "n": "Sopa del día", "v": 16.83}, {"id": "p9", "n": "Costillas guisadas", "v": 27.26}];
+const reducido=matchMedia("(prefers-reduced-motion:reduce)").matches;
+const hayG=typeof gsap!=="undefined" && typeof ScrollTrigger!=="undefined";
+const fino=matchMedia("(hover:hover) and (pointer:fine)").matches;
+
+/* ── vídeos: HD en escritorio, SD en móvil; pausan fuera de pantalla ── */
+const ahorro=navigator.connection && navigator.connection.saveData;
+$$("video[data-sd]").forEach(v=>{
+  if(reducido||ahorro){ v.removeAttribute("autoplay"); return; }
+  const src=(innerWidth>900 && v.dataset.hd)?v.dataset.hd:v.dataset.sd;
+  v.muted=true; v.defaultMuted=true; v.playsInline=true;
+  let visible=v.hasAttribute("data-inmediato");
+  const intenta=()=>{ if(visible) v.play().catch(()=>{}); };
+  const carga=()=>{ if(!v.getAttribute("src")){ v.src=src; v.load(); } intenta(); };
+  v.addEventListener("canplay",intenta);
+  if(visible) carga();
+  new IntersectionObserver(es=>es.forEach(e=>{ visible=e.isIntersecting; if(visible) carga(); else if(v.getAttribute("src")) v.pause(); }),{rootMargin:"200px"}).observe(v);
+});
+/* red de seguridad permanente: lo que esté en pantalla más de 1,5 s sin verse, se muestra */
+const vistos=new WeakMap();
+setInterval(()=>{
+  document.querySelectorAll("[data-rv],.linea>span,[data-hero-in]").forEach(el=>{
+    const r=el.getBoundingClientRect();
+    if(r.bottom<0||r.top>innerHeight||r.height===0){ vistos.delete(el); return; }
+    if(+getComputedStyle(el).opacity>0.05){ vistos.delete(el); return; }
+    const t=vistos.get(el)||Date.now(); vistos.set(el,t);
+    if(Date.now()-t>1500){ el.style.opacity=1; el.style.transform="none"; }
+  });
+},500);
+
+/* ── carta: pestañas + pedido ── */
+$$(".tab").forEach(t=>t.addEventListener("click",()=>{
+  $$(".tab").forEach(x=>x.classList.toggle("on",x===t));
+  $$(".plato").forEach(p=>p.classList.toggle("oculto",p.dataset.g!==t.dataset.g));
+  if(hayG) ScrollTrigger.refresh();
+}));
+let carro={};
+const fmt=n=>MON+(n%1===0?n.toLocaleString("es"):n.toFixed(2));
+function pintar(){
+  const ids=Object.keys(carro), n=ids.reduce((t,k)=>t+carro[k],0);
+  const tot=ids.reduce((t,k)=>t+carro[k]*ITEMS.find(i=>i.id===k).v,0);
+  $$(".mas").forEach(b=>{ const c=carro[b.dataset.id]||0; b.classList.toggle("puesto",c>0); b.textContent=c>0?c:"+"; });
+  const bar=$("#barraP"); if(bar){ bar.classList.toggle("on",n>0); $("#barraN").textContent=n+(n===1?" elegido · ":" elegidos · ")+fmt(tot); }
+  const l=$("#pedidoL"); if(l) l.innerHTML=n?("<b>Tu selección:</b> "+ids.map(k=>carro[k]+"× "+ITEMS.find(i=>i.id===k).n).join(", ")+" — <b>"+fmt(tot)+"</b>"):"Puedes añadir platos o servicios desde la carta con el botón +.";
+}
+document.addEventListener("click",e=>{
+  const b=e.target.closest(".mas"); if(!b) return;
+  carro[b.dataset.id]=(carro[b.dataset.id]||0)+1;
+  if(e.shiftKey||e.altKey){ carro[b.dataset.id]-=2; if(carro[b.dataset.id]<=0) delete carro[b.dataset.id]; }
+  pintar();
+});
+$$("[data-quitar]").forEach(b=>b.addEventListener("click",()=>{carro={};pintar();}));
+pintar();
+
+/* ── formulario → WhatsApp con todo escrito ── */
+const f=$("#formR");
+if(f) f.addEventListener("submit",e=>{
+  e.preventDefault();
+  const d=new FormData(f); let t="¡Hola "+NEG+"! Quiero "+f.dataset.accion.toLowerCase()+".\n\n";
+  for(const [k,v] of d.entries()) if(String(v).trim()) t+="• "+k+": "+v+"\n";
+  const ids=Object.keys(carro);
+  if(ids.length){ t+="\nMi selección:\n"; ids.forEach(k=>{ const it=ITEMS.find(i=>i.id===k); t+="  "+carro[k]+"× "+it.n+" — "+fmt(carro[k]*it.v)+"\n"; });
+    t+="Total: "+fmt(ids.reduce((s,k)=>s+carro[k]*ITEMS.find(i=>i.id===k).v,0))+"\n"; }
+  t+="\n(Enviado desde la página web)";
+  window.open("https://api.whatsapp.com/send?phone="+WA+"&text="+encodeURIComponent(t),"_blank");
+});
+
+/* ── abierto ahora ── */
+const ab=$("#abierto"); if(ab && ab.dataset.h){
+  const [a,c]=ab.dataset.h.split("-").map(Number), h=new Date().getHours()+new Date().getMinutes()/60;
+  const si=c>a?(h>=a&&h<c):(h>=a||h<c);
+  ab.querySelector("span").textContent=si?"Abierto ahora":"Ahora cerrado · abre a las "+(a>12?(a-12)+" pm":a+" am");
+  if(!si) ab.querySelector("i").style.background="#d9534f";
+}
+
+/* ── nav: fondo al bajar, se esconde al bajar rápido ── */
+const nav=$(".nav"); let ultimo=0;
+addEventListener("scroll",()=>{ const y=scrollY; if(nav){ nav.classList.toggle("sol",y>60); nav.classList.toggle("fuera",y>ultimo&&y>600); } ultimo=y;
+  const p=$(".progreso"); if(p) p.style.transform="scaleX("+(y/(document.documentElement.scrollHeight-innerHeight))+")"; },{passive:true});
+
+if(!hayG||reducido){ const pre=$(".pre"); if(pre) pre.remove(); return; }
+
+/* ═════════ EFECTOS (solo con GSAP y sin movimiento reducido) ═════════ */
+gsap.registerPlugin(ScrollTrigger);
+document.documentElement.classList.add("js-anim");
+
+/* red de seguridad: pase lo que pase, a los 6 s todo visible */
+const rescate=setTimeout(()=>{ document.documentElement.classList.remove("js-anim");
+  $$("[data-rv],.linea>span,.mask img").forEach(el=>{ el.style.opacity=1; el.style.transform="none"; el.style.clipPath="none"; });
+  const pre=$(".pre"); if(pre) pre.remove(); },6000);
+
+let lenis=null;
+if(typeof Lenis!=="undefined"){
+  lenis=new Lenis({duration:1.15,smoothWheel:true}); window.__lenis=lenis;
+  lenis.on("scroll",ScrollTrigger.update);
+  gsap.ticker.add(t=>lenis.raf(t*1000)); gsap.ticker.lagSmoothing(0);
+  $$('a[href^="#"]').forEach(a=>a.addEventListener("click",e=>{ const d=$(a.getAttribute("href")); if(d){ e.preventDefault(); lenis.scrollTo(d,{offset:-70}); } }));
+}
+
+/* cursor que crece sobre lo clicable + botones magnéticos */
+if(fino){
+  const cur=$(".cur"); const xs=gsap.quickTo(cur,"x",{duration:.35,ease:"power3"}), ys=gsap.quickTo(cur,"y",{duration:.35,ease:"power3"});
+  addEventListener("pointermove",e=>{ xs(e.clientX); ys(e.clientY); });
+  $$("a,button,.reel,.plato").forEach(el=>{ el.addEventListener("pointerenter",()=>cur.classList.add("big")); el.addEventListener("pointerleave",()=>cur.classList.remove("big")); });
+  $$(".btn,.flota").forEach(b=>{
+    b.addEventListener("pointermove",e=>{ const r=b.getBoundingClientRect(); gsap.to(b,{x:(e.clientX-r.left-r.width/2)*.28,y:(e.clientY-r.top-r.height/2)*.35,duration:.4}); });
+    b.addEventListener("pointerleave",()=>gsap.to(b,{x:0,y:0,duration:.7,ease:"elastic.out(1,.4)"}));
+  });
+}
+
+/* titulares: cada línea sube desde su máscara */
+function entrarLineas(raiz,retraso){
+  const sp=$$(".linea>span",raiz); if(!sp.length) return;
+  gsap.from(sp,{yPercent:115,rotate:3,duration:1.25,ease:"expo.out",stagger:.09,delay:retraso||0,
+    scrollTrigger:raiz===document?undefined:{trigger:raiz,start:"top 82%"}});
+}
+
+/* preloader: nombre + contador, luego telón hacia arriba */
+const pre=$(".pre"), tl=gsap.timeline({onComplete:()=>{ if(pre) pre.remove(); }});
+if(pre){
+  const n={v:0}, num=$("small",pre);
+  tl.from($$("b span",pre),{yPercent:120,duration:.9,ease:"expo.out",stagger:.03})
+    .to(n,{v:100,duration:1.1,ease:"power2.inOut",onUpdate:()=>num.textContent=Math.round(n.v)+"%"},"<")
+    .to(pre,{yPercent:-100,duration:1,ease:"expo.inOut"},"+=.1");
+}
+tl.add(()=>{},"-=.35");
+const hero=$("[data-hero]");
+if(hero){
+  tl.from($$(".linea>span",hero),{yPercent:115,rotate:3,duration:1.3,ease:"expo.out",stagger:.1},pre?"-=.55":0)
+    .from($$("[data-hero-in]",hero),{y:30,opacity:0,duration:1,ease:"power3.out",stagger:.08},"-=.9");
+  const vid=$("[data-hero-media]",hero);
+  if(vid) tl.from(vid,{scale:1.25,duration:2.2,ease:"expo.out"},pre?"-=1.6":0);
+}
+clearTimeout(rescate);
+
+/* resto de titulares */
+$$("[data-titular]").forEach(t=>entrarLineas(t));
+
+/* apariciones suaves */
+$$("[data-rv]").forEach(el=>gsap.from(el,{y:60,opacity:0,duration:1.1,ease:"power3.out",
+  scrollTrigger:{trigger:el,start:"top 88%"}}));
+
+/* imágenes con cortinilla + parallax interno */
+$$(".mask").forEach(m=>{
+  const img=$("img,video",m); if(!img) return;
+  gsap.fromTo(m,{clipPath:"inset(12% 12% 12% 12% round 24px)"},{clipPath:"inset(0% 0% 0% 0% round 0px)",ease:"none",
+    scrollTrigger:{trigger:m,start:"top 90%",end:"top 35%",scrub:true}});
+  gsap.fromTo(img,{scale:1.3,yPercent:-8},{scale:1,yPercent:8,ease:"none",scrollTrigger:{trigger:m,start:"top bottom",end:"bottom top",scrub:true}});
+});
+
+/* vídeo que se encoge al bajar (portada tipo cine) */
+$$("[data-encoge]").forEach(v=>gsap.to(v,{clipPath:"inset(6% 5% 6% 5% round 28px)",ease:"none",
+  scrollTrigger:{trigger:v,start:"top top",end:"bottom top",scrub:true}}));
+
+/* cifras que cuentan */
+$$("[data-cuenta]").forEach(el=>{ const fin=+el.dataset.cuenta, suf=el.dataset.suf||"", o={v:0};
+  gsap.to(o,{v:fin,duration:2,ease:"power2.out",scrollTrigger:{trigger:el,start:"top 90%"},
+    onUpdate:()=>el.textContent=(fin%1?o.v.toFixed(1):Math.round(o.v))+suf}); });
+
+/* galería horizontal fijada (solo escritorio) */
+const hz=$("[data-horizontal]");
+if(hz){ const pista=$("[data-pista]",hz);
+  ScrollTrigger.matchMedia({"(min-width:901px)":()=>{
+    const dist=()=>pista.scrollWidth-innerWidth+80;
+    gsap.to(pista,{x:()=>-dist(),ease:"none",scrollTrigger:{trigger:hz,start:"top top",end:()=>"+="+dist(),pin:true,scrub:1,invalidateOnRefresh:true}});
+  }});
+}
+
+/* tarjetas apiladas */
+$$("[data-apila]").forEach((c,i,arr)=>{ if(i===arr.length-1) return;
+  gsap.to(c,{scale:.9,opacity:.5,ease:"none",scrollTrigger:{trigger:arr[i+1],start:"top 85%",end:"top 25%",scrub:true}}); });
+
+/* texto que se ilumina palabra a palabra */
+$$("[data-ilumina]").forEach(p=>{
+  p.innerHTML=p.textContent.trim().split(/\s+/).map(w=>'<span style="opacity:.18;display:inline-block">'+w+'&nbsp;</span>').join("");
+  gsap.to($$("span",p),{opacity:1,stagger:.05,ease:"none",scrollTrigger:{trigger:p,start:"top 80%",end:"bottom 45%",scrub:true}});
+});
+
+/* inclinación 3D de las reseñas y reels */
+if(fino) $$(".resena,.reel").forEach(t=>{
+  t.addEventListener("pointermove",e=>{ const r=t.getBoundingClientRect();
+    gsap.to(t,{rotateY:((e.clientX-r.left)/r.width-.5)*10,rotateX:-((e.clientY-r.top)/r.height-.5)*10,transformPerspective:900,duration:.5}); });
+  t.addEventListener("pointerleave",()=>gsap.to(t,{rotateX:0,rotateY:0,duration:.8,ease:"power3"}));
+});
+
+/* las imágenes diferidas cambian alturas: se recalculan los disparadores cuando llegan */
+let espera=null; const refrescar=()=>{ clearTimeout(espera); espera=setTimeout(()=>ScrollTrigger.refresh(),250); };
+addEventListener("load",refrescar);
+$$("img").forEach(i=>{ if(!i.complete) i.addEventListener("load",refrescar,{once:true}); });
+})();
+</script>
+</body>
+</html>
