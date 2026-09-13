@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Propuesta para El Chamo de La Herradura · Fábrica de Webs</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Dos niveles para la página de El Chamo de La Herradura: Esencial US$197 y Élite US$347.">
+<meta name="theme-color" content="#110B07">
+<meta property="og:title" content="Propuesta para El Chamo de La Herradura">
+<meta property="og:description" content="Dos niveles para su página: Esencial US$197 y Élite US$347. Toque cada una y véala funcionando.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&amp;q=72&amp;fm=jpg&amp;fit=crop&amp;auto=format">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+:root{
+  --bg:#110B07; --panel:#1A120C; --panel2:#22180F; --linea:rgba(255,232,208,.11);
+  --tinta:#F7ECDF; --suave:#C3B19E; --tenue:#8E7C6B;
+  --fuego:#FF6A1A; --fuego2:#FF8A3D; --oro:#FFC53D; --wa:#25D366;
+  --r:22px;
+  --disp:"Bricolage Grotesque",Georgia,serif;
+  --sans:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tinta);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.w{width:min(1100px,calc(100% - 36px));margin-inline:auto}
+h1,h2,h3{font-family:var(--disp);font-weight:800;letter-spacing:-.02em;line-height:1.04;margin:0}
+
+.top{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--linea);background:rgba(17,11,7,.86);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.top .w{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px}
+.marca{font:600 .72rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--suave)}
+.marca b{color:var(--tinta);font-weight:700}
+.pill{font:600 .74rem/1 var(--sans);letter-spacing:.06em;padding:8px 12px;border-radius:99px;
+  border:1px solid rgba(255,106,26,.45);color:var(--fuego2);white-space:nowrap}
+
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--linea)}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.34}
+.hero-bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(17,11,7,.35) 0%,rgba(17,11,7,.84) 62%,var(--bg) 100%),
+             radial-gradient(80% 60% at 15% 20%,rgba(255,106,26,.24),transparent 60%)}
+.hero-in{position:relative;padding:76px 0 66px}
+.rot{display:inline-block;font:700 .74rem/1.2 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--oro)}
+.hero h1{font-size:clamp(2.7rem,9vw,5.6rem);margin-top:16px}
+.hero h1 em{font-style:normal;color:var(--fuego)}
+.hero p{max-width:52ch;color:var(--suave);font-size:clamp(1rem,2.4vw,1.15rem);margin:20px 0 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.chips span{font-size:.82rem;padding:8px 13px;border-radius:99px;background:rgba(255,255,255,.05);border:1px solid var(--linea)}
+
+.sec{padding:76px 0}
+.cab{max-width:680px}
+.cab h2{font-size:clamp(2rem,5.4vw,3.2rem);margin-top:12px}
+.cab p{color:var(--suave);margin:14px 0 0}
+
+.planes{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px;align-items:start}
+.plan{position:relative;background:var(--panel);border:1px solid var(--linea);border-radius:var(--r);padding:30px;
+  display:flex;flex-direction:column}
+.plan.destacada{background:linear-gradient(180deg,#2A1A0E,var(--panel) 42%);border-color:rgba(255,106,26,.55);
+  box-shadow:0 30px 80px -40px rgba(255,106,26,.55)}
+.sello{position:absolute;top:-13px;left:30px;background:var(--fuego);color:#170A02;font:800 .7rem/1 var(--sans);
+  letter-spacing:.1em;text-transform:uppercase;padding:8px 12px;border-radius:99px}
+.nivel{font:800 .78rem/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--suave)}
+.destacada .nivel{color:var(--fuego2)}
+.plan h3{font-size:1.6rem;margin-top:12px}
+.precio{display:flex;align-items:baseline;gap:10px;margin-top:22px}
+.precio b{font-family:var(--disp);font-size:clamp(3rem,8vw,3.8rem);line-height:1;letter-spacing:-.03em}
+.precio span{color:var(--tenue);font-size:.9rem}
+.mitad{margin:8px 0 0;font-size:.88rem;color:var(--suave)}
+.mitad b{color:var(--tinta)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;width:100%;
+  border-radius:14px;font:700 1rem/1.2 var(--sans);text-align:center;transition:transform .2s,background .2s,border-color .2s,filter .2s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn:active{transform:scale(.98)}
+.btn-fuego{background:var(--fuego);color:#170A02}
+.btn-fuego:hover{background:var(--fuego2)}
+.btn-linea{border:1.5px solid rgba(255,232,208,.28);color:var(--tinta)}
+.btn-linea:hover{border-color:var(--tinta)}
+.btn-wa{background:var(--wa);color:#04210F}
+.btn-wa:hover{filter:brightness(1.06)}
+.btn-suave{background:rgba(255,255,255,.06);border:1px solid var(--linea);color:var(--tinta)}
+.btn-suave:hover{border-color:rgba(255,232,208,.3)}
+.ver{margin-top:22px}
+.quiero{margin-top:18px}
+
+.lista{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
+.lista li{display:grid;grid-template-columns:22px 1fr;gap:10px;font-size:.96rem;line-height:1.45}
+.lista li::before{content:"";width:20px;height:20px;margin-top:1px;border-radius:50%;
+  background:rgba(255,106,26,.16) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF8A3D' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/12px no-repeat}
+.lista li.no{color:var(--tenue)}
+.lista li.no::before{background:rgba(255,255,255,.06) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238E7C6B' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M7 12h10'/%3E%3C/svg%3E") center/12px no-repeat}
+.lista li b{font-weight:600}
+.entrega{margin-top:24px;padding-top:20px;border-top:1px solid var(--linea);display:flex;justify-content:space-between;gap:10px;
+  font-size:.9rem;color:var(--suave)}
+.entrega b{color:var(--tinta)}
+
+.tabla-w{margin-top:36px;border:1px solid var(--linea);border-radius:var(--r);overflow-x:auto;background:var(--panel)}
+table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{padding:15px 18px;text-align:left;border-bottom:1px solid var(--linea);font-size:.94rem}
+th{font:700 .74rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--tenue);background:var(--panel2)}
+th.c,td.c{text-align:center;width:120px}
+td.c{font-weight:700}
+tbody tr:last-child td{border-bottom:0}
+.si{color:var(--fuego2)}
+.nn{color:var(--tenue)}
+tr.pre td{font-family:var(--disp);font-size:1.25rem;font-weight:800;background:var(--panel2)}
+
+.consejo{display:grid;grid-template-columns:1.1fr 1fr;gap:18px;margin-top:40px}
+.caja{background:var(--panel);border:1px solid var(--linea);border-radius:var(--r);padding:28px}
+.caja h3{font-size:1.4rem;margin-top:12px}
+.caja p{color:var(--suave);margin:12px 0 0}
+.caja.fuego{border-color:rgba(255,106,26,.5);background:linear-gradient(160deg,#2A1A0E,var(--panel) 70%)}
+.razones{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:12px}
+.razones li{padding-left:18px;position:relative}
+.razones li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:2px;background:var(--fuego)}
+
+.pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+.paso{background:var(--panel);border:1px solid var(--linea);border-radius:var(--r);padding:26px}
+.paso i{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:rgba(255,106,26,.16);
+  color:var(--fuego2);font:800 1rem/1 var(--disp);font-style:normal}
+.paso b{display:block;font-size:1.08rem;margin-top:16px}
+.paso p{color:var(--suave);margin:8px 0 0;font-size:.94rem}
+.necesito{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+.nec{border:1px dashed rgba(255,232,208,.2);border-radius:16px;padding:18px;font-size:.92rem;color:var(--suave)}
+.nec b{display:block;color:var(--tinta);margin-bottom:4px}
+.letra{display:grid;gap:6px;margin-top:30px;color:var(--tenue);font-size:.86rem}
+
+.final{padding:84px 0 100px;text-align:center;border-top:1px solid var(--linea);
+  background:radial-gradient(70% 100% at 50% 0%,rgba(255,106,26,.18),transparent 70%)}
+.final h2{font-size:clamp(2.2rem,6vw,3.6rem);margin-top:12px}
+.final p{color:var(--suave);margin:14px auto 0;max-width:46ch}
+.final-b{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:640px;margin:32px auto 0}
+.otra{display:inline-block;margin-top:20px;color:var(--suave);text-decoration:underline;text-underline-offset:4px}
+footer{padding:28px 0 40px;border-top:1px solid var(--linea);color:var(--tenue);font-size:.85rem}
+footer .w{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  .planes,.consejo{grid-template-columns:1fr}
+  .plan.destacada{margin-top:14px}
+  .pasos{grid-template-columns:1fr}
+  .necesito{grid-template-columns:1fr 1fr}
+}
+@media (max-width:520px){
+  .sec{padding:58px 0}
+  .hero-in{padding:52px 0 48px}
+  .plan{padding:24px}
+  .sello{left:24px}
+  .necesito,.final-b{grid-template-columns:1fr}
+  .marca span{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="w">
+  <span class="marca"><b>Fábrica de Webs</b><span> · Jeremy Rojas</span></span>
+  <span class="pill">Propuesta</span>
+</div></header>
+
+<section class="hero">
+  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1600&amp;q=70&amp;fm=jpg&amp;fit=crop&amp;auto=format" alt=""></div>
+  <div class="w hero-in">
+    <span class="rot">Propuesta para</span>
+    <h1>El Chamo<br><em>de La Herradura</em></h1>
+    <p>Dos maneras de tener su página. Toque cada una y la ve funcionando con su nombre, su menú y su WhatsApp. Escoja con calma.</p>
+    <div class="chips"><span>Pedidos por WhatsApp</span><span>Abierto o cerrado en vivo</span><span>Hecha para celular</span><span>Sin mensualidad obligatoria</span></div>
+  </div>
+</section>
+
+<section class="sec" id="niveles"><div class="w">
+  <div class="cab">
+    <span class="rot">Los dos niveles</span>
+    <h2>Escoja el suyo</h2>
+    <p>Un solo pago. La mitad para empezar y la otra mitad cuando la vea funcionando.</p>
+  </div>
+
+  <div class="planes">
+    <article class="plan">
+      <span class="nivel">Esencial</span>
+      <h3>Lo necesario, bien hecho</h3>
+      <div class="precio"><b>US$197</b><span>pago único</span></div>
+      <p class="mitad"><b>US$99</b> para empezar · <b>US$98</b> al entregarla</p>
+      <a class="btn btn-linea ver" href="esencial/">Ver cómo queda la Esencial →</a>
+      <ul class="lista">
+        <li><span>Su <b>menú con fotos y precios</b></span></li>
+        <li><span><b>Pedidos por WhatsApp</b>: el cliente marca lo que quiere y a usted le llega escrito y sumado</span></li>
+        <li><span><b>Abierto o cerrado</b> en vivo, según su horario</span></li>
+        <li><span><b>Mapa y botón «Cómo llegar»</b></span></li>
+        <li><span>Botones para <b>escribir y llamar</b></span></li>
+        <li><span>Pensada primero para <b>celular</b></span></li>
+        <li class="no"><span>En un enlace gratis, sin dominio propio</span></li>
+        <li class="no"><span>Sin vídeo ni animaciones de nivel agencia</span></li>
+      </ul>
+      <div class="entrega"><span>Entrega</span><b>2 a 3 días</b></div>
+      <a class="btn btn-suave quiero" href="https://api.whatsapp.com/send?phone=18293689630&amp;text=Hola%20Jeremy%2C%20soy%20El%20Chamo%20de%20La%20Herradura.%20Vi%20la%20propuesta%20y%20quiero%20la%20Esencial%20(US%24197)." target="_blank" rel="noopener">Quiero la Esencial</a>
+    </article>
+
+    <article class="plan destacada">
+      <span class="sello">Recomendada para El Chamo</span>
+      <span class="nivel">Élite</span>
+      <h3>La que se ve de otro nivel</h3>
+      <div class="precio"><b>US$347</b><span>pago único</span></div>
+      <p class="mitad"><b>US$174</b> para empezar · <b>US$173</b> al entregarla</p>
+      <a class="btn btn-fuego ver" href="elite/">Ver cómo queda la Élite →</a>
+      <ul class="lista">
+        <li><span><b>Todo lo de la Esencial</b></span></li>
+        <li><span><b>Vídeo de portada</b> a pantalla completa</span></li>
+        <li><span>Pantalla de carga con su nombre, <b>scroll suave y animaciones</b></span></li>
+        <li><span>Sección de <b>vídeos</b> para lo que ya graban para Instagram</span></li>
+        <li><span><b>Dominio propio .com</b> con su nombre, el primer año incluido</span></li>
+        <li><span><b>Datos para Google</b> y vista previa bonita cuando la comparten por WhatsApp</span></li>
+        <li><span><b>Cambios de menú y precios gratis</b> durante el primer mes</span></li>
+      </ul>
+      <div class="entrega"><span>Entrega</span><b>3 a 5 días</b></div>
+      <a class="btn btn-wa quiero" href="https://api.whatsapp.com/send?phone=18293689630&amp;text=Hola%20Jeremy%2C%20soy%20El%20Chamo%20de%20La%20Herradura.%20Vi%20la%20propuesta%20y%20quiero%20la%20%C3%89lite%20(US%24347)." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1a13 13 0 0 1-5.9-5.2c-.4-.7-.9-1.6-.9-2.5 0-1 .5-1.5.7-1.7.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6a9 9 0 0 0 3.9 3.3c.3.1.4.1.6-.1l.8-1c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3v1.1Z"/></svg>Quiero la Élite</a>
+    </article>
+  </div>
+
+  <div class="tabla-w"><table>
+    <thead><tr><th>Lado a lado</th><th class="c">Esencial</th><th class="c">Élite</th></tr></thead>
+    <tbody>
+      <tr><td>Menú con fotos y precios</td><td class="c si">✓</td><td class="c si">✓</td></tr>
+      <tr><td>Pedidos por WhatsApp ya sumados</td><td class="c si">✓</td><td class="c si">✓</td></tr>
+      <tr><td>Abierto o cerrado en vivo</td><td class="c si">✓</td><td class="c si">✓</td></tr>
+      <tr><td>Mapa y cómo llegar</td><td class="c si">✓</td><td class="c si">✓</td></tr>
+      <tr><td>Vídeo de portada y animaciones</td><td class="c nn">—</td><td class="c si">✓</td></tr>
+      <tr><td>Sección de vídeos</td><td class="c nn">—</td><td class="c si">✓</td></tr>
+      <tr><td>Dominio propio .com (primer año)</td><td class="c nn">—</td><td class="c si">✓</td></tr>
+      <tr><td>Datos para Google</td><td class="c nn">—</td><td class="c si">✓</td></tr>
+      <tr><td>Cambios gratis el primer mes</td><td class="c nn">—</td><td class="c si">✓</td></tr>
+      <tr class="pre"><td>Precio</td><td class="c">US$197</td><td class="c">US$347</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="w">
+  <div class="cab">
+    <span class="rot">Su pregunta</span>
+    <h2>¿Con cuál se trabaja mejor?</h2>
+    <p>Con las dos le entran pedidos por WhatsApp desde el primer día. La diferencia está en cuánto le vende la página antes de que el cliente escriba.</p>
+  </div>
+  <div class="consejo">
+    <div class="caja fuego">
+      <span class="rot">Mi recomendación</span>
+      <h3>La Élite, para un negocio como el suyo</h3>
+      <ul class="razones">
+        <li>Ustedes venden de noche y por antojo. El vídeo abre el apetito antes de que lean el menú.</li>
+        <li>Un dominio con su nombre da confianza cuando la comparten en los grupos de WhatsApp del barrio.</li>
+        <li>El primer mes de cambios le deja ajustar platos y precios sin pagar nada extra.</li>
+      </ul>
+    </div>
+    <div class="caja">
+      <span class="rot" style="color:var(--suave)">Si prefiere empezar liviano</span>
+      <h3>La Esencial ya hace el trabajo</h3>
+      <p>Su menú en línea, los pedidos entrando ya sumados y su horario al día. Y si más adelante quiere, la subimos a la Élite.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="w">
+  <div class="cab">
+    <span class="rot">Cómo trabajamos</span>
+    <h2>Tres pasos y la tiene</h2>
+  </div>
+  <div class="pasos">
+    <div class="paso"><i>1</i><b>Escoge y aparta</b><p>Me dice cuál quiere y paga la mitad por PayPal o Western Union.</p></div>
+    <div class="paso"><i>2</i><b>Me pasa lo suyo</b><p>Su menú real con precios y unas fotos de sus platos. Con el celular basta.</p></div>
+    <div class="paso"><i>3</i><b>La ve y paga el resto</b><p>Se la entrego funcionando y, cuando esté conforme, paga la otra mitad.</p></div>
+  </div>
+  <div class="necesito">
+    <div class="nec"><b>Su menú</b>Platos y precios de hoy</div>
+    <div class="nec"><b>Fotos</b>De 5 a 10 de sus platos o del local</div>
+    <div class="nec"><b>Logo</b>Si tiene. Si no, usamos su nombre con buena letra</div>
+    <div class="nec"><b>Vídeos (Élite)</b>De 1 a 3 cortos de la plancha o de los pedidos</div>
+  </div>
+  <div class="letra">
+    <span>· Las fotos, los vídeos y los precios de las muestras son de referencia: en su página van los suyos.</span>
+    <span>· El dominio queda a su nombre. Desde el segundo año, la renovación la paga usted (unos US$17 al año).</span>
+    <span>· Mantenimiento opcional después del primer mes: desde US$20 al mes.</span>
+  </div>
+</div></section>
+
+<section class="final"><div class="w">
+  <span class="rot">Usted decide</span>
+  <h2>¿Cuál le gustó más?</h2>
+  <p>Toque su opción y me llega su respuesta por WhatsApp.</p>
+  <div class="final-b">
+    <a class="btn btn-linea" href="https://api.whatsapp.com/send?phone=18293689630&amp;text=Hola%20Jeremy%2C%20soy%20El%20Chamo%20de%20La%20Herradura.%20Vi%20la%20propuesta%20y%20quiero%20la%20Esencial%20(US%24197)." target="_blank" rel="noopener">Quiero la Esencial · US$197</a>
+    <a class="btn btn-fuego" href="https://api.whatsapp.com/send?phone=18293689630&amp;text=Hola%20Jeremy%2C%20soy%20El%20Chamo%20de%20La%20Herradura.%20Vi%20la%20propuesta%20y%20quiero%20la%20%C3%89lite%20(US%24347)." target="_blank" rel="noopener">Quiero la Élite · US$347</a>
+  </div>
+  <a class="otra" href="https://api.whatsapp.com/send?phone=18293689630&amp;text=Hola%20Jeremy%2C%20soy%20El%20Chamo%20de%20La%20Herradura.%20Tengo%20una%20pregunta%20sobre%20la%20propuesta%3A%20" target="_blank" rel="noopener">Tengo una pregunta antes</a>
+</div></section>
+
+<footer><div class="w">
+  <span>Jeremy Rojas · Fábrica de Webs</span>
+  <span>Propuesta para El Chamo de La Herradura</span>
+</div></footer>
+
+</body>
+</html>
