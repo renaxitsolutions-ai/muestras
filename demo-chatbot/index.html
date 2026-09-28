@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Demo del chatbot con IA · Jeremy Rojas</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Pruebe un asistente con IA para WhatsApp: responde, toma pedidos y agenda citas, y el dueño lo ve al instante.">
+<meta name="theme-color" content="#070B14">
+<meta property="og:title" content="Demo del chatbot con IA">
+<meta property="og:description" content="Escríbale como si fuera un cliente: responde, toma el pedido o agenda la cita.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="w top__in">
+    <a class="marca" href="#" aria-label="Jeremy Rojas">
+      <span class="mono">JR</span>
+      <span class="marca__txt"><b>Jeremy Rojas</b><small>Demo · Chatbot con IA</small></span>
+    </a>
+    <a class="btn btn--sm" data-wa href="#">Quiero uno <span aria-hidden="true">→</span></a>
+  </div>
+</header>
+
+<main>
+  <section class="hero w">
+    <p class="kicker"><span class="punto"></span>Demo en vivo</p>
+    <h1>Escríbale como si<br><em>fuera un cliente.</em></h1>
+    <p class="hero__sub">El asistente responde al instante, toma el pedido o agenda la cita, y el dueño lo ve en su panel sin mover un dedo.</p>
+
+    <div class="selector" role="tablist" aria-label="Elija el tipo de negocio">
+      <button class="opcion" role="tab" data-negocio="brasa" aria-selected="true">
+        <span class="opcion__ico" aria-hidden="true">🔥</span>
+        <span><b>Restaurante</b><small>Brasa Norte · pedidos</small></span>
+      </button>
+      <button class="opcion" role="tab" data-negocio="navaja" aria-selected="false">
+        <span class="opcion__ico" aria-hidden="true">✂️</span>
+        <span><b>Barbería</b><small>Navaja Fina · citas</small></span>
+      </button>
+    </div>
+  </section>
+
+  <section class="escenario w">
+    <div class="telefono">
+      <div class="telefono__isla" aria-hidden="true"></div>
+      <div class="chat__cab">
+        <span class="avatar" id="avatar">BN</span>
+        <div class="chat__quien">
+          <b id="negocioNombre">Brasa Norte</b>
+          <small id="estado">en línea</small>
+        </div>
+        <button class="reiniciar" id="reiniciar" type="button" title="Empezar de nuevo" aria-label="Empezar de nuevo">↺</button>
+      </div>
+      <div class="mensajes" id="mensajes" aria-live="polite"></div>
+      <div class="chips" id="chips"></div>
+      <form class="escribir" id="form" autocomplete="off">
+        <input id="entrada" type="text" placeholder="Escriba un mensaje" aria-label="Escriba un mensaje" maxlength="200">
+        <button class="enviar" type="submit" aria-label="Enviar">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M4 11H16.2L10.6 5.4L12 4L20 12L12 20L10.6 18.6L16.2 13H4Z"/></svg>
+        </button>
+      </form>
+    </div>
+
+    <aside class="panel" id="panel" aria-label="Panel del dueño">
+      <div class="panel__cab">
+        <p class="kicker kicker--suave">Lo que ve el dueño</p>
+        <h2 id="panelTitulo">Pedidos de hoy</h2>
+      </div>
+      <div class="stats">
+        <div class="stat"><small>Conversaciones</small><b id="statConv">0</b></div>
+        <div class="stat"><small>Respuesta</small><b id="statResp">—</b></div>
+        <div class="stat"><small id="statVentaTxt">Ventas</small><b id="statVenta">$0</b></div>
+      </div>
+      <div class="bloque">
+        <h3 id="listaTitulo">Pedidos</h3>
+        <ul class="lista" id="lista"></ul>
+      </div>
+      <div class="bloque">
+        <h3>Automatizaciones</h3>
+        <ul class="actividad" id="actividad"></ul>
+      </div>
+    </aside>
+  </section>
+
+  <section class="pasos w">
+    <div class="paso"><span>01</span><b>Responde en segundos</b><p>De día o de noche, con la información real del negocio.</p></div>
+    <div class="paso"><span>02</span><b>Cierra la venta</b><p>Toma el pedido o agenda la cita sin que usted intervenga.</p></div>
+    <div class="paso"><span>03</span><b>Todo queda anotado</b><p>Le avisa por WhatsApp y lo guarda en su panel.</p></div>
+  </section>
+
+  <section class="final w">
+    <h2>¿Lo quiere en <em>su</em> WhatsApp?</h2>
+    <p>Lo entreno con la información de su negocio y se lo dejo funcionando.</p>
+    <a class="btn" data-wa href="#">Escríbame por WhatsApp <span aria-hidden="true">→</span></a>
+  </section>
+</main>
+
+<footer class="pie w">
+  <p>Demo con negocios ficticios y respuestas de muestra. El asistente real se entrena con la información de su negocio.</p>
+  <p>© 2026 Jeremy Rojas</p>
+</footer>
+
+<div class="aviso" id="aviso" role="status" hidden></div>
+
+<script src="datos.js"></script>
+<script src="ui.js"></script>
+<script src="motor.js"></script>
+</body>
+</html>
