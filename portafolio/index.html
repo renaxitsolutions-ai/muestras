@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portafolio · Therojas AI Agency</title>
+<meta name="description" content="Ejemplos de páginas web y chatbot con IA de Therojas AI Agency.">
+<style>
+  :root { --ink:#070b14; --ink-soft:#101a2b; --line:#1f2e44; --ivory:#e8eef7; --stone:#b8c6d8; --sky:#38bdf8; --sky-deep:#0369a1; --violet:#7c3aed; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background-color: var(--ink); color: var(--ivory); font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif; line-height: 1.5; }
+  a { color: inherit; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 40px 20px 72px; }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .tr { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; font-weight: 800; color: #fff; background: linear-gradient(135deg, var(--sky-deep), var(--violet)); }
+  .brand b { display: block; font-size: 19px; }
+  .brand small { color: var(--stone); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; }
+  .cta { background: var(--sky); color: #04121f; font-weight: 700; text-decoration: none; padding: 11px 18px; border-radius: 10px; }
+  h1 { font-size: clamp(30px, 4.6vw, 48px); line-height: 1.08; letter-spacing: -.02em; margin: 56px 0 12px; max-width: 18ch; }
+  .lead { color: var(--stone); font-size: 18px; max-width: 60ch; margin: 0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 22px; margin-top: 40px; }
+  .card { background: var(--ink-soft); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; text-decoration: none; display: flex; flex-direction: column; transition: border-color .2s; }
+  .card:hover, .card:focus-visible { border-color: var(--sky); outline: none; }
+  .card img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; display: block; border-bottom: 1px solid var(--line); }
+  .card div { padding: 16px 18px 18px; }
+  .tag { color: var(--sky); font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+  .card h2 { margin: 6px 0 6px; font-size: 20px; }
+  .card p { margin: 0; color: var(--stone); font-size: 15px; }
+  .ver { display: inline-block; margin-top: 12px; color: var(--sky); font-weight: 600; font-size: 15px; }
+  .nota { margin-top: 36px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 14px; color: var(--stone); font-size: 15px; max-width: 760px; }
+  .nota b { color: var(--ivory); }
+  footer { margin-top: 48px; color: var(--stone); font-size: 14px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="https://wa.me/18293689630"><span class="tr">TR</span><span><b>Therojas</b><small>AI Agency</small></span></a>
+      <a class="cta" href="https://wa.me/18293689630?text=Hola%20Jeremy%2C%20vi%20el%20portafolio%20y%20quiero%20una%20p%C3%A1gina%20para%20mi%20negocio.">Quiero una para mi negocio</a>
+    </header>
+
+    <h1>Ejemplos de páginas web y chatbot con IA</h1>
+    <p class="lead">Así se ven las páginas que hacemos: rápidas en el celular, con su carta o servicios, y pedidos o reservas que llegan directo a WhatsApp.</p>
+
+    <div class="grid">
+      <a class="card" href="../elite/brasa-norte/">
+        <img src="img/brasa-norte.jpg" alt="Página de Brasa Norte, parrilla en Ciudad de Panamá" loading="lazy" width="1200" height="750">
+        <div><span class="tag">Restaurante · Élite</span><h2>Brasa Norte</h2><p>Parrilla con video de portada, carta y reservas por WhatsApp.</p><span class="ver">Ver página →</span></div>
+      </a>
+      <a class="card" href="../elite/casa-merengue/">
+        <img src="img/casa-merengue.jpg" alt="Página de Casa Merengue, postres en Santo Domingo" loading="lazy" width="1200" height="750">
+        <div><span class="tag">Postres · Élite</span><h2>Casa Merengue</h2><p>Repostería con carta, pedidos por encargo y pedido directo a WhatsApp.</p><span class="ver">Ver página →</span></div>
+      </a>
+      <a class="card" href="../elite/navaja-fina/">
+        <img src="img/navaja-fina.jpg" alt="Página de Navaja Fina Barber Club, barbería en Ciudad de México" loading="lazy" width="1200" height="750">
+        <div><span class="tag">Barbería · Élite</span><h2>Navaja Fina Barber Club</h2><p>Servicios, equipo y reserva de citas por WhatsApp.</p><span class="ver">Ver página →</span></div>
+      </a>
+      <a class="card" href="../demo-chatbot/">
+        <img src="img/demo-chatbot.jpg" alt="Demo del chatbot con IA atendiendo como si fuera un cliente" loading="lazy" width="1200" height="750">
+        <div><span class="tag">Chatbot con IA</span><h2>Demo en vivo del asistente</h2><p>Escríbale como si fuera un cliente: responde, toma el pedido o agenda la cita.</p><span class="ver">Probar el chatbot →</span></div>
+      </a>
+    </div>
+
+    <p class="nota"><b>Son negocios de ejemplo</b> creados para mostrar el nivel Élite. A cada negocio real le preparamos una muestra privada con su nombre, sin costo, para que la vea antes de decidir.</p>
+
+    <footer>Therojas AI Agency · Jeremy Rojas · WhatsApp <a href="https://wa.me/18293689630">+1 829 368 9630</a></footer>
+  </div>
+</body>
+</html>
